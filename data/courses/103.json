@@ -1,0 +1,11 @@
+{
+  "id": 103,
+  "name": "BS Information Technology - Multimedia Arts",
+  "degree": "BS Information Technology",
+  "specialization": "Multimedia Arts",
+  "school": {
+    "id": 1,
+    "name": "School of Information Technology Education",
+    "code": "SITE"
+  }
+}

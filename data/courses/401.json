@@ -1,0 +1,10 @@
+{
+  "id": 401,
+  "name": "BS Accountancy",
+  "degree": "BS Accountancy",
+  "school": {
+    "id": 4,
+    "name": "School of Business and Accountancy",
+    "code": "SBA"
+  }
+}

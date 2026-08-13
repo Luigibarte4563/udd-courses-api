@@ -1,0 +1,17 @@
+{
+  "id": 5,
+  "name": "School of International Hospitality Management",
+  "code": "SIHM",
+  "courses": [
+    {
+      "id": 501,
+      "name": "BS Tourism Management",
+      "degree": "BS Tourism Management"
+    },
+    {
+      "id": 502,
+      "name": "BS Hospitality Management",
+      "degree": "BS Hospitality Management"
+    }
+  ]
+}

@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UDD Courses API — Educational API for Universidad de Dagupan Programs</title>
+  <meta name="description" content="An educational API providing structured information about academic programs and courses offered by Universidad de Dagupan." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- 1. TOP UTILITY BAR -->
+  <div class="topbar">
+    <div class="container topbar__inner">
+      <span class="topbar__brand">UDD Courses API</span>
+      <span class="topbar__tag">Educational API &bull; Open Data for Learning</span>
+    </div>
+  </div>
+
+  <!-- 2. NAVIGATION -->
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="#home" class="nav__logo">
+        <span class="nav__logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2 3 7v10l9 5 9-5V7l-9-5z"/><path d="M3 7l9 5 9-5"/><path d="M12 12v10"/>
+          </svg>
+        </span>
+        <span class="nav__logo-text">UDD <em>Courses API</em></span>
+      </a>
+
+      <nav class="nav__links" id="navLinks" aria-label="Main navigation">
+        <a href="#home" class="nav__link" data-nav>Home</a>
+        <a href="#documentation" class="nav__link" data-nav>Documentation</a>
+        <a href="#endpoints" class="nav__link" data-nav>Endpoints</a>
+        <a href="#courses" class="nav__link" data-nav>Courses</a>
+        <a href="#examples" class="nav__link" data-nav>Examples</a>
+        <a href="#getting-started" class="btn btn--primary btn--sm nav__cta">Get Started</a>
+      </nav>
+
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <svg class="icon icon--menu" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <path d="M3 6h18M3 12h18M3 18h18"/>
+        </svg>
+        <svg class="icon icon--close" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <path d="M6 6l12 12M18 6 6 18"/>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- 3. HERO SECTION -->
+    <section class="hero" id="home">
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <span class="badge">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.5 5 5.5.8-4 3.9.9 5.5-4.9-2.6L6.1 17.2l.9-5.5-4-3.9 5.5-.8z"/></svg>
+            Open Educational API
+          </span>
+          <h1 class="hero__title">Explore academic programs through a <span class="hero__highlight">simple API</span>.</h1>
+          <p class="hero__lead">UDD Courses API provides structured information about academic programs offered by Universidad de Dagupan, making it easy to access, explore, and learn from real-world educational data.</p>
+          <div class="hero__actions">
+            <a href="#courses" class="btn btn--primary">Explore Courses</a>
+            <a href="#documentation" class="btn btn--ghost">Read Documentation</a>
+          </div>
+          <p class="hero__hint">
+            <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>
+            Fetch JSON over HTTP. No authentication required.
+          </p>
+        </div>
+
+        <!-- 4. API PREVIEW -->
+        <div class="apipreview reveal">
+          <div class="apipreview__bar">
+            <span class="apipreview__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span class="apipreview__method">GET</span>
+            <span class="apipreview__path">/data/courses.json</span>
+            <span class="apipreview__status">200 OK</span>
+            <span class="apipreview__json">JSON</span>
+          </div>
+          <div class="apipreview__body">
+<pre><code><span class="c-punc">{</span>
+  <span class="c-key">"schools"</span><span class="c-punc">:</span> <span class="c-punc">[</span>
+    <span class="c-punc">{</span>
+      <span class="c-key">"id"</span><span class="c-punc">:</span> <span class="c-num">1</span><span class="c-punc">,</span>
+      <span class="c-key">"name"</span><span class="c-punc">:</span> <span class="c-str">"School of Information Technology Education"</span><span class="c-punc">,</span>
+      <span class="c-key">"code"</span><span class="c-punc">:</span> <span class="c-str">"SITE"</span><span class="c-punc">,</span>
+      <span class="c-key">"courses"</span><span class="c-punc">:</span> <span class="c-punc">[</span>
+        <span class="c-punc">{</span>
+          <span class="c-key">"id"</span><span class="c-punc">:</span> <span class="c-num">101</span><span class="c-punc">,</span>
+          <span class="c-key">"name"</span><span class="c-punc">:</span> <span class="c-str">"BS Computer Science - Data Science"</span>
+        <span class="c-punc">}</span>
+      <span class="c-punc">]</span>
+    <span class="c-punc">}</span>
+  <span class="c-punc">]</span>
+<span class="c-punc">}</span></code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. QUICK OVERVIEW -->
+    <section class="stats">
+      <div class="container">
+        <div class="stats__grid">
+          <div class="stat-card reveal">
+            <span class="stat-card__icon stat-card__icon--blue">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V9M10 21V3M16 21v-8M22 21H2"/></svg>
+            </span>
+            <strong class="stat-card__value" id="statSchools">0</strong>
+            <span class="stat-card__label">Schools</span>
+          </div>
+          <div class="stat-card reveal">
+            <span class="stat-card__icon stat-card__icon--navy">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 9 12 4 2 9l10 5 10-5z"/><path d="M6 11.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-4.5"/></svg>
+            </span>
+            <strong class="stat-card__value" id="statCourses">0</strong>
+            <span class="stat-card__label">Programs</span>
+          </div>
+          <div class="stat-card reveal">
+            <span class="stat-card__icon stat-card__icon--gold">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6l7-1v13l-7 1z"/><path d="M15 5l6 2v13l-6-2"/><path d="M8 6 2 8v13l6-2"/></svg>
+            </span>
+            <strong class="stat-card__value">JSON</strong>
+            <span class="stat-card__label">Response Format</span>
+          </div>
+          <div class="stat-card reveal">
+            <span class="stat-card__icon stat-card__icon--green">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </span>
+            <strong class="stat-card__value">GET</strong>
+            <span class="stat-card__label">Request Method</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. WHAT IS UDD COURSES API? -->
+    <section class="section what">
+      <div class="container section__narrow">
+        <span class="eyebrow">What is it?</span>
+        <h2 class="section__title">Academic data, made accessible.</h2>
+        <p class="section__intro">UDD Courses API provides structured information about schools and academic programs at Universidad de Dagupan in an easy-to-consume JSON format.</p>
+
+        <div class="what__grid">
+          <div class="what-item reveal"><span class="what-item__dot"></span><p><strong>Browse</strong> academic programs</p></div>
+          <div class="what-item reveal"><span class="what-item__dot"></span><p><strong>Search</strong> courses</p></div>
+          <div class="what-item reveal"><span class="what-item__dot"></span><p><strong>Filter</strong> programs by school</p></div>
+          <div class="what-item reveal"><span class="what-item__dot"></span><p><strong>Learn</strong> how APIs work</p></div>
+          <div class="what-item reveal"><span class="what-item__dot"></span><p><strong>Practice</strong> making HTTP requests</p></div>
+          <div class="what-item reveal"><span class="what-item__dot"></span><p><strong>Build</strong> educational projects</p></div>
+          <div class="what-item reveal"><span class="what-item__dot"></span><p><strong>Experiment</strong> with JSON data</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. WHO IS IT FOR? -->
+    <section class="section audience">
+      <div class="container">
+        <span class="eyebrow">Who is it for?</span>
+        <h2 class="section__title">Built for curious minds.</h2>
+        <div class="audience__grid">
+          <article class="persona reveal">
+            <span class="persona__icon persona__icon--blue">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </span>
+            <h3>Students</h3>
+            <p>Learn how APIs, JSON, and HTTP requests work using familiar academic data.</p>
+          </article>
+          <article class="persona reveal">
+            <span class="persona__icon persona__icon--navy">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </span>
+            <h3>Developers</h3>
+            <p>Use structured course information in applications, prototypes, and educational projects.</p>
+          </article>
+          <article class="persona reveal">
+            <span class="persona__icon persona__icon--gold">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-3.5"/></svg>
+            </span>
+            <h3>Educators</h3>
+            <p>Use the API as a simple teaching resource for demonstrating API consumption.</p>
+          </article>
+          <article class="persona reveal">
+            <span class="persona__icon persona__icon--green">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9 9a3 3 0 1 1 6 0c0 1.5-1.5 2-3 3.5S9 14 9 15h6"/><path d="M12 17.5h.01"/></svg>
+            </span>
+            <h3>Learners</h3>
+            <p>Practice working with real-world structured data instead of random placeholder data.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. AVAILABLE DATA -->
+    <section class="section schools" id="schools">
+      <div class="container">
+        <span class="eyebrow">Available data</span>
+        <h2 class="section__title">Schools you can explore.</h2>
+        <p class="section__intro">Every program belongs to one of the schools below. Click a school to filter the explorer.</p>
+        <div class="schools__grid" id="schoolsGrid">
+          <div class="skeleton-card"></div>
+          <div class="skeleton-card"></div>
+          <div class="skeleton-card"></div>
+          <div class="skeleton-card"></div>
+        </div>
+        <div class="data-error" id="schoolsError" hidden>
+          <p>Unable to load courses.</p>
+          <button class="btn btn--ghost btn--sm" id="retryBtn">Try again</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. COURSE EXPLORER -->
+    <section class="section explorer" id="courses">
+      <div class="container">
+        <span class="eyebrow">Course Explorer</span>
+        <h2 class="section__title">Explore available programs.</h2>
+        <p class="section__intro">Search by course name, degree, major, or specialization. Filter to a single school, or browse everything.</p>
+
+        <div class="explorer__controls">
+          <label class="explorer__search">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.35-4.35"/></svg>
+            <input type="search" id="searchInput" placeholder="Search courses..." autocomplete="off" />
+          </label>
+          <label class="explorer__select">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h18M6 12h12M10 19h4"/></svg>
+            <select id="schoolFilter">
+              <option value="all">All Schools</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="explorer__meta" id="explorerMeta"></div>
+
+        <div class="explorer__loading" id="explorerLoading">
+          <span class="spinner" aria-hidden="true"></span>
+          Loading courses...
+        </div>
+
+        <div class="explorer__grid" id="explorerGrid"></div>
+
+        <div class="explorer__empty" id="explorerEmpty" hidden>
+          <p>No programs match your search.</p>
+          <p class="explorer__empty-sub">Try a different keyword or reset the filters.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. API ENDPOINTS -->
+    <section class="section docs" id="endpoints">
+      <div class="container section__narrow">
+        <span class="eyebrow">API Endpoints</span>
+        <h2 class="section__title">Three endpoints. Everything you need.</h2>
+        <p class="section__intro">Fetch everything at once, or access a single school or program directly by its ID.</p>
+
+        <div class="endpoints">
+          <article class="endpoint reveal">
+            <div class="endpoint__head">
+              <span class="endpoint__method">GET</span>
+              <code class="endpoint__path">/data/courses.json</code>
+            </div>
+            <p class="endpoint__desc">Returns all available schools and their academic programs.</p>
+            <div class="endpoint__example">
+              <span class="endpoint__line">
+                <span class="endpoint__tag">Example</span>
+                <code>GET /data/courses.json</code>
+              </span>
+              <span class="endpoint__line">
+                <span class="endpoint__tag endpoint__tag--ok">Response</span>
+                <code>200 OK &bull; application/json</code>
+              </span>
+            </div>
+          </article>
+
+          <article class="endpoint reveal">
+            <div class="endpoint__head">
+              <span class="endpoint__method">GET</span>
+              <code class="endpoint__path">/data/schools/{id}.json</code>
+            </div>
+            <p class="endpoint__desc">Returns a single school and its programs. Replace <span class="c-endpoint">{id}</span> with a school ID (1&ndash;8).</p>
+            <div class="endpoint__example">
+              <span class="endpoint__line">
+                <span class="endpoint__tag">Example</span>
+                <code>GET /data/schools/1.json</code>
+              </span>
+              <span class="endpoint__line">
+                <span class="endpoint__tag">Returns</span>
+                <code>School of Information Technology Education</code>
+              </span>
+              <span class="endpoint__line">
+                <span class="endpoint__tag endpoint__tag--ok">Response</span>
+                <code>200 OK &bull; application/json</code>
+              </span>
+            </div>
+          </article>
+
+          <article class="endpoint reveal">
+            <div class="endpoint__head">
+              <span class="endpoint__method">GET</span>
+              <code class="endpoint__path">/data/courses/{id}.json</code>
+            </div>
+            <p class="endpoint__desc">Returns a single academic program with its school information. Replace <span class="c-endpoint">{id}</span> with a course ID (e.g. 101, 204, 501).</p>
+            <div class="endpoint__example">
+              <span class="endpoint__line">
+                <span class="endpoint__tag">Example</span>
+                <code>GET /data/courses/102.json</code>
+              </span>
+              <span class="endpoint__line">
+                <span class="endpoint__tag">Returns</span>
+                <code>BS Information Technology - Web Development</code>
+              </span>
+              <span class="endpoint__line">
+                <span class="endpoint__tag endpoint__tag--ok">Response</span>
+                <code>200 OK &bull; application/json</code>
+              </span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11. RESPONSE STRUCTURE -->
+    <section class="section docs docs--alt" id="response">
+      <div class="container">
+        <div class="section__narrow">
+          <span class="eyebrow">Response Structure</span>
+          <h2 class="section__title">Understand the data.</h2>
+          <p class="section__intro">The API returns one JSON object that groups every academic program under its school. Here is the shape you will receive &mdash; both from the full list and from the by-ID endpoints.</p>
+        </div>
+
+        <div class="docs__split">
+          <div class="codeblock">
+            <div class="codeblock__bar">
+              <span>response.json</span>
+              <span class="codeblock__badge">JSON</span>
+            </div>
+<pre><code><span class="c-punc">{</span>
+  <span class="c-key">"schools"</span><span class="c-punc">:</span> <span class="c-punc">[</span>
+    <span class="c-punc">{</span>
+      <span class="c-key">"id"</span><span class="c-punc">:</span> <span class="c-num">1</span><span class="c-punc">,</span>
+      <span class="c-key">"name"</span><span class="c-punc">:</span> <span class="c-str">"School of Information Technology Education"</span><span class="c-punc">,</span>
+      <span class="c-key">"code"</span><span class="c-punc">:</span> <span class="c-str">"SITE"</span><span class="c-punc">,</span>
+      <span class="c-key">"courses"</span><span class="c-punc">:</span> <span class="c-punc">[</span><span class="c-punc">]</span>
+    <span class="c-punc">}</span>
+  <span class="c-punc">]</span>
+<span class="c-punc">}</span></code></pre>
+          </div>
+
+          <div class="fields">
+            <div class="field reveal">
+              <div class="field__head"><code>schools</code><span class="field__type">array</span></div>
+              <p>Contains the list of academic schools.</p>
+            </div>
+            <div class="field reveal">
+              <div class="field__head"><code>id</code><span class="field__type">number</span></div>
+              <p>Unique identifier for the school or course.</p>
+            </div>
+            <div class="field reveal">
+              <div class="field__head"><code>name</code><span class="field__type">string</span></div>
+              <p>Name of the school or academic program.</p>
+            </div>
+            <div class="field reveal">
+              <div class="field__head"><code>code</code><span class="field__type">string</span></div>
+              <p>Short identifier for the school.</p>
+            </div>
+            <div class="field reveal">
+              <div class="field__head"><code>courses</code><span class="field__type">array</span></div>
+              <p>Contains the academic programs belonging to the school.</p>
+            </div>
+            <div class="field reveal">
+              <div class="field__head"><code>degree</code><span class="field__type">string</span></div>
+              <p>Degree or program type.</p>
+            </div>
+            <div class="field reveal">
+              <div class="field__head"><code>major</code><span class="field__type">string</span></div>
+              <p>Major associated with the program, when applicable.</p>
+            </div>
+            <div class="field reveal">
+              <div class="field__head"><code>specialization</code><span class="field__type">string</span></div>
+              <p>Specialization associated with the program, when applicable.</p>
+            </div>
+            <div class="field reveal">
+              <div class="field__head"><code>school</code><span class="field__type">object</span></div>
+              <p>School details included with each program in the by-ID course response.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 12. HOW TO USE THE API -->
+    <section class="section docs" id="documentation">
+      <div class="container section__narrow">
+        <span class="eyebrow">How to use the API</span>
+        <h2 class="section__title">Start using the API</h2>
+
+        <ol class="steps">
+          <li class="step reveal">
+            <span class="step__num">1</span>
+            <div class="step__body">
+              <h3>Make a GET request</h3>
+              <p>Point your browser, terminal, or code at the courses endpoint.</p>
+              <div class="codeblock codeblock--small">
+<pre><code>GET <span class="c-endpoint">/data/courses.json</span></code></pre>
+              </div>
+            </div>
+          </li>
+          <li class="step reveal">
+            <span class="step__num">2</span>
+            <div class="step__body">
+              <h3>Receive the JSON response</h3>
+              <p>The server responds with <span class="c-endpoint">200 OK</span> and a JSON object containing all schools and programs.</p>
+              <div class="codeblock codeblock--small">
+<pre><code><span class="c-punc">{</span>
+  <span class="c-key">"schools"</span><span class="c-punc">:</span> <span class="c-punc">[</span><span class="c-punc"> ...</span><span class="c-punc"> ]</span>
+<span class="c-punc">}</span></code></pre>
+              </div>
+            </div>
+          </li>
+          <li class="step reveal">
+            <span class="step__num">3</span>
+            <div class="step__body">
+              <h3>Use the data in your application</h3>
+              <p>Fetch the data with <span class="c-endpoint">fetch()</span>, parse the JSON, and use it however you like.</p>
+              <div class="codeblock codeblock--small">
+<pre><code><span class="c-kw">const</span> response <span class="c-punc">=</span> <span class="c-kw">await</span> fetch(
+  <span class="c-str">"/data/courses.json"</span>
+);
+
+<span class="c-kw">const</span> data <span class="c-punc">=</span> <span class="c-kw">await</span> response.json();
+
+console<span class="c-punc">.</span>log(data);</code></pre>
+              </div>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 13 + 14 + 15. EXAMPLES -->
+    <section class="section docs docs--alt" id="examples">
+      <div class="container">
+        <div class="section__narrow">
+          <span class="eyebrow">Examples</span>
+          <h2 class="section__title">Code you can copy.</h2>
+          <p class="section__intro">JavaScript examples for fetching, finding, and filtering programs. Replace <code class="inline-code">YOUR_API_URL</code> with the URL where the API is hosted.</p>
+        </div>
+
+        <div class="examples">
+          <article class="example-card reveal">
+            <div class="codeblock">
+              <div class="codeblock__bar">
+                <span>Fetch all courses</span>
+                <button class="copy-btn" data-copy data-copy-target="code-example-1">
+                  <svg class="copy-btn__icon" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                  <span class="copy-btn__label">Copy</span>
+                </button>
+              </div>
+<pre class="copy-target" id="code-example-1"><code><span class="c-kw">const</span> response <span class="c-punc">=</span> <span class="c-kw">await</span> fetch(
+  <span class="c-str">"YOUR_API_URL/data/courses.json"</span>
+);
+
+<span class="c-kw">const</span> data <span class="c-punc">=</span> <span class="c-kw">await</span> response.json();
+
+console<span class="c-punc">.</span>log(data<span class="c-punc">.</span>schools);</code></pre>
+            </div>
+          </article>
+
+          <article class="example-card reveal">
+            <div class="codeblock">
+              <div class="codeblock__bar">
+                <span>Finding a course</span>
+                <button class="copy-btn" data-copy data-copy-target="code-example-2">
+                  <svg class="copy-btn__icon" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                  <span class="copy-btn__label">Copy</span>
+                </button>
+              </div>
+<pre class="copy-target" id="code-example-2"><code><span class="c-kw">const</span> response <span class="c-punc">=</span> <span class="c-kw">await</span> fetch(
+  <span class="c-str">"YOUR_API_URL/data/courses.json"</span>
+);
+
+<span class="c-kw">const</span> data <span class="c-punc">=</span> <span class="c-kw">await</span> response.json();
+
+<span class="c-kw">const</span> course <span class="c-punc">=</span> data<span class="c-punc">.</span>schools
+  <span class="c-punc">.</span>flatMap(school <span class="c-punc">=&gt;</span> school<span class="c-punc">.</span>courses)
+  <span class="c-punc">.</span>find(course <span class="c-punc">=&gt;</span> course<span class="c-punc">.</span>id <span class="c-punc">===</span> <span class="c-num">102</span>);
+
+console<span class="c-punc">.</span>log(course);</code></pre>
+            </div>
+            <p class="example-card__note">This example retrieves course ID 102 from the available programs.</p>
+          </article>
+
+          <article class="example-card reveal">
+            <div class="codeblock">
+              <div class="codeblock__bar">
+                <span>Filtering courses</span>
+                <button class="copy-btn" data-copy data-copy-target="code-example-3">
+                  <svg class="copy-btn__icon" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                  <span class="copy-btn__label">Copy</span>
+                </button>
+              </div>
+<pre class="copy-target" id="code-example-3"><code><span class="c-kw">const</span> response <span class="c-punc">=</span> <span class="c-kw">await</span> fetch(
+  <span class="c-str">"YOUR_API_URL/data/courses.json"</span>
+);
+
+<span class="c-kw">const</span> data <span class="c-punc">=</span> <span class="c-kw">await</span> response.json();
+
+<span class="c-kw">const</span> courses <span class="c-punc">=</span> data<span class="c-punc">.</span>schools
+  <span class="c-punc">.</span>flatMap(school <span class="c-punc">=&gt;</span> school<span class="c-punc">.</span>courses)
+  <span class="c-punc">.</span>filter(course <span class="c-punc">=&gt;</span>
+    course<span class="c-punc">.</span>name
+      <span class="c-punc">.</span>toLowerCase()
+      <span class="c-punc">.</span>includes(<span class="c-str">"computer"</span>)
+  );
+
+console<span class="c-punc">.</span>log(courses);</code></pre>
+            </div>
+            <p class="example-card__note">Filter the returned data to create custom searches.</p>
+          </article>
+
+          <article class="example-card reveal">
+            <div class="codeblock">
+              <div class="codeblock__bar">
+                <span>Access a course by ID</span>
+                <button class="copy-btn" data-copy data-copy-target="code-example-4">
+                  <svg class="copy-btn__icon" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                  <span class="copy-btn__label">Copy</span>
+                </button>
+              </div>
+<pre class="copy-target" id="code-example-4"><code><span class="c-comment">// Fetch the course directly by its ID</span>
+<span class="c-kw">const</span> response <span class="c-punc">=</span> <span class="c-kw">await</span> fetch(
+  <span class="c-str">"YOUR_API_URL/data/courses/102.json"</span>
+);
+
+<span class="c-kw">const</span> course <span class="c-punc">=</span> <span class="c-kw">await</span> response.json();
+
+console<span class="c-punc">.</span>log(course<span class="c-punc">.</span>name);</code></pre>
+            </div>
+            <p class="example-card__note">Access a program directly with its ID. The same pattern works for schools: <span class="c-endpoint">data/schools/1.json</span>.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 16. TRY THE API -->
+    <section class="section tester" id="try">
+      <div class="container section__narrow">
+        <span class="eyebrow">Try the API</span>
+        <h2 class="section__title">Try the API</h2>
+        <p class="section__intro">Send a real request and inspect the live response. Choose an endpoint, pick an ID, and hit Send.</p>
+
+        <div class="tester__box">
+          <div class="tester__request">
+            <span class="tester__method">GET</span>
+            <label class="tester__select">
+              <select id="testerResource">
+                <option value="all">/data/courses.json</option>
+                <option value="school">/data/schools/{id}.json</option>
+                <option value="course">/data/courses/{id}.json</option>
+              </select>
+            </label>
+            <label class="tester__select tester__select--id">
+              <input type="number" id="testerId" value="1" min="1" aria-label="Resource ID" />
+            </label>
+            <code class="tester__path" id="testerPath">/data/courses.json</code>
+            <button class="btn btn--primary btn--sm" id="sendBtn">Send Request</button>
+          </div>
+
+          <div class="tester__response" id="testerResponse">
+            <div class="tester__empty">
+              <p>Press &ldquo;Send Request&rdquo; to see the response.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 17. ERROR HANDLING -->
+    <section class="section errors">
+      <div class="container section__narrow">
+        <span class="eyebrow">Error Handling</span>
+        <h2 class="section__title">Common responses.</h2>
+        <p class="section__intro">The API keeps things simple. Here is what you may encounter.</p>
+        <div class="errors__grid">
+          <article class="error-card error-card--ok reveal">
+            <span class="error-card__code">200 OK</span>
+            <p>The request was successful.</p>
+          </article>
+          <article class="error-card error-card--warn reveal">
+            <span class="error-card__code">404 Not Found</span>
+            <p>The requested resource could not be found.</p>
+          </article>
+          <article class="error-card error-card--err reveal">
+            <span class="error-card__code">Network Error</span>
+            <p>Check your internet connection or verify the API URL.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 18. GETTING STARTED CTA -->
+    <section class="section cta" id="getting-started">
+      <div class="container">
+        <div class="cta__box reveal">
+          <span class="badge badge--light">Get Started</span>
+          <h2 class="cta__title">Ready to explore UDD programs?</h2>
+          <p class="cta__text">Start exploring the API and build your first project using real academic data.</p>
+          <div class="cta__actions">
+            <a href="#courses" class="btn btn--light">Explore Courses</a>
+            <a href="#documentation" class="btn btn--outline-light">Read Documentation</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 19. GITHUB / SOURCE -->
+    <section class="section source">
+      <div class="container section__narrow">
+        <div class="source__box reveal">
+          <div class="source__icon">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 0 0-2.84 17.54c.45.08.61-.2.61-.44v-1.54c-2.5.54-3.03-1.2-3.03-1.2-.4-1.03-1-1.3-1-1.3-.82-.56.06-.55.06-.55.9.06 1.38.93 1.38.93.8 1.38 2.1.98 2.62.75.08-.58.31-.98.57-1.2-2-.23-4.1-1-4.1-4.45 0-.98.35-1.79.93-2.42-.09-.23-.4-1.15.09-2.4 0 0 .76-.24 2.48.92a8.6 8.6 0 0 1 4.52 0c1.72-1.16 2.48-.92 2.48-.92.49 1.25.18 2.17.09 2.4.58.63.93 1.44.93 2.42 0 3.46-2.1 4.22-4.11 4.45.32.28.61.83.61 1.67v2.48c0 .24.16.53.61.44A9 9 0 0 0 12 3z"/></svg>
+          </div>
+          <h3 class="source__title">Open and learn.</h3>
+          <p class="source__text">Explore the project, understand how the data is structured, and use the API in your own learning projects.</p>
+          <a class="btn btn--ghost" href="https://github.com/Luigibarte4563/Flutter.git" target="_blank" rel="noopener">
+            View on GitHub
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 20. FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="#home" class="nav__logo nav__logo--footer">
+          <span class="nav__logo-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 7v10l9 5 9-5V7l-9-5z"/><path d="M3 7l9 5 9-5"/><path d="M12 12v10"/></svg>
+          </span>
+          <span class="nav__logo-text">UDD <em>Courses API</em></span>
+        </a>
+        <p>An educational API for exploring Universidad de Dagupan academic programs.</p>
+      </div>
+      <nav class="footer__links" aria-label="Footer">
+        <a href="#documentation">Documentation</a>
+        <a href="#endpoints">Endpoints</a>
+        <a href="#courses">Courses</a>
+        <a href="#examples">Examples</a>
+        <a href="https://github.com/Luigibarte4563/Flutter.git" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+    </div>
+    <div class="container footer__bottom">
+      <p>Built for learning and experimentation.</p>
+      <p>&copy; <span id="year">2026</span> UDD Courses API</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

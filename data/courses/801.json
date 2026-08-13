@@ -1,0 +1,10 @@
+{
+  "id": 801,
+  "name": "BS Criminology",
+  "degree": "BS Criminology",
+  "school": {
+    "id": 8,
+    "name": "School of Criminology",
+    "code": "SOC"
+  }
+}

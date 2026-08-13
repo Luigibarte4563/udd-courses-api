@@ -1,0 +1,17 @@
+{
+  "id": 6,
+  "name": "School of Humanities",
+  "code": "SH",
+  "courses": [
+    {
+      "id": 601,
+      "name": "BA Communication",
+      "degree": "BA Communication"
+    },
+    {
+      "id": 602,
+      "name": "BS Psychology",
+      "degree": "BS Psychology"
+    }
+  ]
+}

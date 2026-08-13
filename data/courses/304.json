@@ -1,0 +1,11 @@
+{
+  "id": 304,
+  "name": "BSEd Major in Filipino",
+  "degree": "Bachelor of Secondary Education",
+  "major": "Filipino",
+  "school": {
+    "id": 3,
+    "name": "School of Teacher Education",
+    "code": "STE"
+  }
+}

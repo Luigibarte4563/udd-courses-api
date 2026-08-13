@@ -1,0 +1,10 @@
+{
+  "id": 601,
+  "name": "BA Communication",
+  "degree": "BA Communication",
+  "school": {
+    "id": 6,
+    "name": "School of Humanities",
+    "code": "SH"
+  }
+}

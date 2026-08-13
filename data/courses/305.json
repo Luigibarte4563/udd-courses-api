@@ -1,0 +1,11 @@
+{
+  "id": 305,
+  "name": "BSEd Major in Mathematics",
+  "degree": "Bachelor of Secondary Education",
+  "major": "Mathematics",
+  "school": {
+    "id": 3,
+    "name": "School of Teacher Education",
+    "code": "STE"
+  }
+}

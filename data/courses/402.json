@@ -1,0 +1,11 @@
+{
+  "id": 402,
+  "name": "BSBA - Financial Management",
+  "degree": "BS Business Administration",
+  "major": "Financial Management",
+  "school": {
+    "id": 4,
+    "name": "School of Business and Accountancy",
+    "code": "SBA"
+  }
+}

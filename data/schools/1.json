@@ -1,0 +1,31 @@
+{
+  "id": 1,
+  "name": "School of Information Technology Education",
+  "code": "SITE",
+  "courses": [
+    {
+      "id": 101,
+      "name": "BS Computer Science - Data Science",
+      "degree": "BS Computer Science",
+      "specialization": "Data Science"
+    },
+    {
+      "id": 102,
+      "name": "BS Information Technology - Web Development",
+      "degree": "BS Information Technology",
+      "specialization": "Web Development"
+    },
+    {
+      "id": 103,
+      "name": "BS Information Technology - Multimedia Arts",
+      "degree": "BS Information Technology",
+      "specialization": "Multimedia Arts"
+    },
+    {
+      "id": 104,
+      "name": "BS Information Technology - Infrastructure with Cybersecurity",
+      "degree": "BS Information Technology",
+      "specialization": "Infrastructure with Cybersecurity"
+    }
+  ]
+}

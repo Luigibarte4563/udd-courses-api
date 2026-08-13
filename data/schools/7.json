@@ -1,0 +1,12 @@
+{
+  "id": 7,
+  "name": "School of Health and Sciences",
+  "code": "SHS",
+  "courses": [
+    {
+      "id": 701,
+      "name": "BS Nursing",
+      "degree": "BS Nursing"
+    }
+  ]
+}

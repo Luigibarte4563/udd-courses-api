@@ -1,0 +1,11 @@
+{
+  "id": 101,
+  "name": "BS Computer Science - Data Science",
+  "degree": "BS Computer Science",
+  "specialization": "Data Science",
+  "school": {
+    "id": 1,
+    "name": "School of Information Technology Education",
+    "code": "SITE"
+  }
+}

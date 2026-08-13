@@ -1,0 +1,10 @@
+{
+  "id": 501,
+  "name": "BS Tourism Management",
+  "degree": "BS Tourism Management",
+  "school": {
+    "id": 5,
+    "name": "School of International Hospitality Management",
+    "code": "SIHM"
+  }
+}

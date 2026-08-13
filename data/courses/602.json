@@ -1,0 +1,10 @@
+{
+  "id": 602,
+  "name": "BS Psychology",
+  "degree": "BS Psychology",
+  "school": {
+    "id": 6,
+    "name": "School of Humanities",
+    "code": "SH"
+  }
+}

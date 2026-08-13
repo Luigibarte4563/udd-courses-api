@@ -1,0 +1,10 @@
+{
+  "id": 203,
+  "name": "BS Electrical Engineering",
+  "degree": "BS Electrical Engineering",
+  "school": {
+    "id": 2,
+    "name": "School of Engineering",
+    "code": "SOE"
+  }
+}

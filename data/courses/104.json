@@ -1,0 +1,11 @@
+{
+  "id": 104,
+  "name": "BS Information Technology - Infrastructure with Cybersecurity",
+  "degree": "BS Information Technology",
+  "specialization": "Infrastructure with Cybersecurity",
+  "school": {
+    "id": 1,
+    "name": "School of Information Technology Education",
+    "code": "SITE"
+  }
+}

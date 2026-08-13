@@ -1,0 +1,27 @@
+{
+  "id": 2,
+  "name": "School of Engineering",
+  "code": "SOE",
+  "courses": [
+    {
+      "id": 201,
+      "name": "BS Civil Engineering",
+      "degree": "BS Civil Engineering"
+    },
+    {
+      "id": 202,
+      "name": "BS Computer Engineering",
+      "degree": "BS Computer Engineering"
+    },
+    {
+      "id": 203,
+      "name": "BS Electrical Engineering",
+      "degree": "BS Electrical Engineering"
+    },
+    {
+      "id": 204,
+      "name": "BS Electronics Engineering",
+      "degree": "BS Electronics Engineering"
+    }
+  ]
+}

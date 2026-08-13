@@ -1,0 +1,190 @@
+{
+  "schools": [
+    {
+      "id": 1,
+      "name": "School of Information Technology Education",
+      "code": "SITE",
+      "courses": [
+        {
+          "id": 101,
+          "name": "BS Computer Science - Data Science",
+          "degree": "BS Computer Science",
+          "specialization": "Data Science"
+        },
+        {
+          "id": 102,
+          "name": "BS Information Technology - Web Development",
+          "degree": "BS Information Technology",
+          "specialization": "Web Development"
+        },
+        {
+          "id": 103,
+          "name": "BS Information Technology - Multimedia Arts",
+          "degree": "BS Information Technology",
+          "specialization": "Multimedia Arts"
+        },
+        {
+          "id": 104,
+          "name": "BS Information Technology - Infrastructure with Cybersecurity",
+          "degree": "BS Information Technology",
+          "specialization": "Infrastructure with Cybersecurity"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "School of Engineering",
+      "code": "SOE",
+      "courses": [
+        {
+          "id": 201,
+          "name": "BS Civil Engineering",
+          "degree": "BS Civil Engineering"
+        },
+        {
+          "id": 202,
+          "name": "BS Computer Engineering",
+          "degree": "BS Computer Engineering"
+        },
+        {
+          "id": 203,
+          "name": "BS Electrical Engineering",
+          "degree": "BS Electrical Engineering"
+        },
+        {
+          "id": 204,
+          "name": "BS Electronics Engineering",
+          "degree": "BS Electronics Engineering"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "School of Teacher Education",
+      "code": "STE",
+      "courses": [
+        {
+          "id": 301,
+          "name": "Bachelor of Early Childhood Education",
+          "degree": "Bachelor of Early Childhood Education"
+        },
+        {
+          "id": 302,
+          "name": "Bachelor of Elementary Education",
+          "degree": "Bachelor of Elementary Education"
+        },
+        {
+          "id": 303,
+          "name": "BSEd Major in English",
+          "degree": "Bachelor of Secondary Education",
+          "major": "English"
+        },
+        {
+          "id": 304,
+          "name": "BSEd Major in Filipino",
+          "degree": "Bachelor of Secondary Education",
+          "major": "Filipino"
+        },
+        {
+          "id": 305,
+          "name": "BSEd Major in Mathematics",
+          "degree": "Bachelor of Secondary Education",
+          "major": "Mathematics"
+        },
+        {
+          "id": 306,
+          "name": "BSEd Major in Science",
+          "degree": "Bachelor of Secondary Education",
+          "major": "Science"
+        },
+        {
+          "id": 307,
+          "name": "Bachelor of Special Needs Education",
+          "degree": "Bachelor of Special Needs Education"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "School of Business and Accountancy",
+      "code": "SBA",
+      "courses": [
+        {
+          "id": 401,
+          "name": "BS Accountancy",
+          "degree": "BS Accountancy"
+        },
+        {
+          "id": 402,
+          "name": "BSBA - Financial Management",
+          "degree": "BS Business Administration",
+          "major": "Financial Management"
+        },
+        {
+          "id": 403,
+          "name": "BSBA - Marketing Management",
+          "degree": "BS Business Administration",
+          "major": "Marketing Management"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "School of International Hospitality Management",
+      "code": "SIHM",
+      "courses": [
+        {
+          "id": 501,
+          "name": "BS Tourism Management",
+          "degree": "BS Tourism Management"
+        },
+        {
+          "id": 502,
+          "name": "BS Hospitality Management",
+          "degree": "BS Hospitality Management"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "School of Humanities",
+      "code": "SH",
+      "courses": [
+        {
+          "id": 601,
+          "name": "BA Communication",
+          "degree": "BA Communication"
+        },
+        {
+          "id": 602,
+          "name": "BS Psychology",
+          "degree": "BS Psychology"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "School of Health and Sciences",
+      "code": "SHS",
+      "courses": [
+        {
+          "id": 701,
+          "name": "BS Nursing",
+          "degree": "BS Nursing"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "School of Criminology",
+      "code": "SOC",
+      "courses": [
+        {
+          "id": 801,
+          "name": "BS Criminology",
+          "degree": "BS Criminology"
+        }
+      ]
+    }
+  ]
+}

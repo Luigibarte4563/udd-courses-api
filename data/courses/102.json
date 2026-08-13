@@ -1,0 +1,11 @@
+{
+  "id": 102,
+  "name": "BS Information Technology - Web Development",
+  "degree": "BS Information Technology",
+  "specialization": "Web Development",
+  "school": {
+    "id": 1,
+    "name": "School of Information Technology Education",
+    "code": "SITE"
+  }
+}

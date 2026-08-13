@@ -1,63 +1,54 @@
-# 🎓 UDD Courses API
+# UDD Courses API
 
-[![Live Demo](https://img.shields.io/badge/Live_Demo-GitHub_Pages-2ea44f?style=for-the-badge&logo=github)](https://luigibarte4563.github.io/udd-courses-api/)
-[![API Status](https://img.shields.io/badge/API-Static_JSON-007acc?style=for-the-badge&logo=json)](https://luigibarte4563.github.io/udd-courses-api/data/courses.json)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
+An educational API providing structured information about academic programs and courses offered by **Universidad de Dagupan**.
 
-An open-source, lightweight educational API providing structured JSON data for academic programs and schools offered at **Universidad de Dagupan**. 
-
-Designed with simplicity in mind — no database, no backend overhead, and zero build steps required.
+The site is a simple vanilla HTML/CSS/JavaScript page that serves static JSON data — no database, no backend, no build step. Open it locally or publish it free on GitHub Pages.
 
 ---
 
-## 🚀 Live Demo & Interactive Links
+## Table of Contents
 
-- **🌐 Live Web App / Documentation:** [https://luigibarte4563.github.io/udd-courses-api/](https://luigibarte4563.github.io/udd-courses-api/)
-- **📦 Main API Endpoint:** [`GET /data/courses.json`](https://luigibarte4563.github.io/udd-courses-api/data/courses.json)
-
----
-
-## 📌 Overview & Quick Stats
-
-| Metric | Value |
-| :--- | :--- |
-| **Schools / Colleges** | `8` |
-| **Programs Offered** | `24` |
-| **Data Format** | Static `JSON` |
-| **HTTP Method** | `GET` |
-| **Authentication** | None (Public) |
+- [Project structure](#project-structure)
+- [What the API provides](#what-the-api-provides)
+- [Run it locally](#run-it-locally)
+- [Publish on GitHub Pages](#publish-on-github-pages)
+- [Use the API](#use-the-api)
+- [Customize the data](#customize-the-data)
 
 ---
 
-## 📁 Project Structure
+## Project structure
 
+```
 udd-courses-api/
-├── index.html                 # Interactive landing page & docs interface
+│
+├── index.html          # Landing page and documentation site
 ├── css/
-│   └── styles.css             # Main styling
+│   └── styles.css      # All styling
 ├── js/
-│   └── main.js                # Frontend data fetching & UI logic
+│   └── main.js         # Fetches the data and powers the UI
 ├── scripts/
-│   └── generate-endpoints.js  # Node script to pre-render individual JSON endpoints
-└── data/                      # 📡 Core Static API
-├── courses.json           # Primary dataset containing all schools & courses
-├── schools/               # Individual school datasets (e.g., schools/1.json)
-└── courses/               # Individual program datasets (e.g., courses/1.json)
+│   └── generate-endpoints.js  # Regenerates the by-ID JSON files
+└── data/
+    ├── courses.json    # THE API — all the course data
+    ├── schools/        # One file per school: schools/{id}.json
+    └── courses/        # One file per program: courses/{id}.json
+```
 
+The "API" is the folder `data/`. The website fetches it with normal `fetch()` calls and renders it, just like any client app would.
 
 ---
 
-## 🔌 API Endpoints & Base URLs
+## What the API provides
 
-**Base URL:** `https://luigibarte4563.github.io/udd-courses-api/data`
+| Data | Value |
+| --- | --- |
+| Schools | 8 |
+| Programs | 24 |
+| Response format | JSON |
+| Request method | GET |
 
-| Endpoint | Method | Description | Direct URL |
-| :--- | :---: | :--- | :--- |
-| `/courses.json` | `GET` | Fetch all schools and their respective courses | [View JSON](https://luigibarte4563.github.io/udd-courses-api/data/courses.json) |
-| `/schools/{id}.json` | `GET` | Fetch a specific school by ID (`1`–`8`) | [View Example (ID: 1)](https://luigibarte4563.github.io/udd-courses-api/data/schools/1.json) |
-| `/courses/{id}.json` | `GET` | Fetch a specific program by ID (`1`–`24`) | [View Example (ID: 1)](https://luigibarte4563.github.io/udd-courses-api/data/courses/1.json) |
-
-### Sample Response (`GET /data/courses.json`)
+**Example response** (`GET /data/courses.json`):
 
 ```json
 {
@@ -77,62 +68,171 @@ udd-courses-api/
     }
   ]
 }
-💻 Code Examples
-1. Fetching All Data
-JavaScript
-const res = await fetch("[https://luigibarte4563.github.io/udd-courses-api/data/courses.json](https://luigibarte4563.github.io/udd-courses-api/data/courses.json)");
-const data = await res.json();
+```
+
+## Endpoints
+
+| Endpoint | Description |
+| --- | --- |
+| `GET /data/courses.json` | All schools and their programs |
+| `GET /data/schools/{id}.json` | One school by ID (1&ndash;8), with its programs |
+| `GET /data/courses/{id}.json` | One program by ID (1&ndash;24), with its school details |
+
+**Examples:**
+
+```
+GET /data/courses.json
+GET /data/schools/1.json
+GET /data/courses/1.json
+```
+
+The by-ID files are generated from `courses.json`, so they always match the main data.
+
+---
+
+## Run it locally
+
+`fetch()` does not work over the `file://` protocol, so serve the folder over HTTP. Pick **one** of these:
+
+### Option 1 — VS Code Live Server (easiest)
+
+1. Open the project folder in VS Code.
+2. Install the **Live Server** extension.
+3. Right-click `index.html` and choose **Open with Live Server**.
+
+### Option 2 — Python
+
+```bash
+cd udd-courses-api
+python -m http.server 8080
+```
+
+Then open http://localhost:8080
+
+### Option 3 — Node.js
+
+```bash
+cd udd-courses-api
+npx serve .
+```
+
+Then open http://localhost:3000
+
+> Any static file server works — this project has no build step, so whatever you use, just point it at the folder.
+
+---
+
+## Publish on GitHub Pages
+
+GitHub Pages hosts static files for free and works perfectly with this project because the site uses relative paths (`data/courses.json`, not `/data/courses.json`).
+
+### Option A — Deploy from a branch (recommended)
+
+1. Create a repository on GitHub (e.g. `udd-courses-api`) and push this folder to it.
+2. Go to the repo on GitHub → **Settings** → **Pages**.
+3. Under **Build and deployment** → **Source**, choose **Deploy from a branch**.
+4. Select the branch (`main`) and folder (`/ (root)`).
+5. Click **Save**. GitHub will build and publish.
+
+Once you push the repo to GitHub, your site will be published at:
+
+- **Site:** `https://<your-username>.github.io/udd-courses-api/`
+- **API:** `https://<your-username>.github.io/udd-courses-api/data/courses.json`
+
+If you fork the repo, your copy will be at `https://<your-username>.github.io/udd-courses-api/`.
+
+> One page cache note: after pushing changes, GitHub Pages can take a few minutes to update. Wait a bit and hard-refresh.
+
+---
+
+## Use the API
+
+### Fetch all courses
+
+```js
+const response = await fetch(
+  "https://<your-username>.github.io/udd-courses-api/data/courses.json"
+);
+
+const data = await response.json();
 
 console.log(data.schools);
-2. Fetching a Specific Endpoint
-JavaScript
-// Fetch a specific program directly by ID
-const res = await fetch("[https://luigibarte4563.github.io/udd-courses-api/data/courses/1.json](https://luigibarte4563.github.io/udd-courses-api/data/courses/1.json)");
-const course = await res.json();
+```
 
-console.log(course.name); // "BS Computer Science - Data Science"
-3. Filtering Programs by Keyword
-JavaScript
-const res = await fetch("[https://luigibarte4563.github.io/udd-courses-api/data/courses.json](https://luigibarte4563.github.io/udd-courses-api/data/courses.json)");
-const data = await res.json();
+### Find one course
 
-const techCourses = data.schools
+```js
+const course = data.schools
   .flatMap(school => school.courses)
-  .filter(course => course.name.toLowerCase().includes("computer"));
+  .find(course => course.id === 1);
 
-console.log(techCourses);
-🛠️ Local Development
-Because static JSON files are requested via fetch(), open the project over an HTTP server rather than opening index.html directly via file://.
+console.log(course);
+```
 
-Quick Start Options
-VS Code Live Server:
+### Access by ID (endpoint)
 
-Open the project folder in VS Code.
+The same program can be fetched directly from its own endpoint:
 
-Install the Live Server extension.
+```js
+const response = await fetch(
+  "https://<your-username>.github.io/udd-courses-api/data/courses/1.json"
+);
 
-Right-click index.html ➔ Open with Live Server.
+const course = await response.json();
 
-Python:
+console.log(course.name); // BS Computer Science - Data Science
+```
 
-Bash
-python -m http.server 8080
-# Open http://localhost:8080
-Node.js:
+Works the same way for schools:
 
-Bash
-npx serve .
-# Open http://localhost:3000
-⚙️ Updating & Customizing Data
-Edit the core dataset at data/courses.json.
+```js
+const response = await fetch(
+  "https://<your-username>.github.io/udd-courses-api/data/schools/1.json"
+);
 
-Regenerate individual /schools/{id}.json and /courses/{id}.json endpoints:
+const school = await response.json();
 
-Bash
+console.log(school.name); // School of Information Technology Education
+```
+
+### Filter by keyword
+
+```js
+const courses = data.schools
+  .flatMap(school => school.courses)
+  .filter(course =>
+    course.name.toLowerCase().includes("computer")
+  );
+
+console.log(courses);
+```
+
+---
+
+## Customize the data
+
+All the content comes from `data/courses.json`. To add, remove, or edit programs, edit that file — the stats, school cards, and course explorer update automatically because they are calculated from the data at runtime.
+
+After editing, regenerate the by-ID endpoints to keep them in sync:
+
+```bash
 node scripts/generate-endpoints.js
-Commit and push your changes to GitHub to update your live API instance on GitHub Pages.
+```
 
-📄 License
-Distributed under the MIT License. Free for educational and personal projects.
+Keep the structure intact:
 
-<FollowUp label="Would you like me to update or generate additional documentation files for this repository?" query="Can you generate additional documentation files for this repository, such as a CONTRIBUTING.md or LICENSE file?"/>
+- `schools` → array of schools
+- `id` → unique number for each school / course
+- `name` → school or program name
+- `code` → short school identifier (e.g. `SITE`)
+- `courses` → array of programs inside the school
+- `degree` → program type (optional)
+- `major` → major, when applicable (optional)
+- `specialization` → specialization, when applicable (optional)
+
+---
+
+## License
+
+Built for learning and experimentation. Use it freely in educational projects.
+

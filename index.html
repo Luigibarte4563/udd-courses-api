@@ -13,39 +13,39 @@
 <body>
 
   <!-- 1. TOP UTILITY BAR -->
-  <div class="topbar">
-    <div class="container topbar__inner">
-      <span class="topbar__brand">UDD Courses API</span>
-      <span class="topbar__tag">Educational API &bull; Open Data for Learning</span>
+  <div class="bg-navy-900 text-white/80 text-[12.5px]">
+    <div class="wrap flex items-center justify-center sm:justify-between gap-3 py-1.5">
+      <span class="font-semibold text-white tracking-wide">UDD Courses API</span>
+      <span class="hidden sm:inline opacity-80">Educational API &bull; Open Data for Learning</span>
     </div>
   </div>
 
   <!-- 2. NAVIGATION -->
-  <header class="nav" id="nav">
-    <div class="container nav__inner">
-      <a href="#home" class="nav__logo">
-        <span class="nav__logo-mark" aria-hidden="true">
-          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <header class="sticky top-0 z-50 bg-white/85 backdrop-blur-md border-b border-line/80" id="nav">
+    <div class="wrap flex items-center justify-between gap-4 py-3 sm:py-4">
+      <a href="#home" class="nav__logo inline-flex items-center gap-2.5 text-navy-900">
+        <span class="grid place-items-center w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-linear-to-br from-accent to-navy-900 text-white shadow-[0_4px_12px_rgba(47,99,255,0.35)]" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M12 2 3 7v10l9 5 9-5V7l-9-5z"/><path d="M3 7l9 5 9-5"/><path d="M12 12v10"/>
           </svg>
         </span>
-        <span class="nav__logo-text">UDD <em>Courses API</em></span>
+        <span class="nav__logo-text font-extrabold text-[16.5px] sm:text-[17px] tracking-tight">UDD <em>Courses API</em></span>
       </a>
 
-      <nav class="nav__links" id="navLinks" aria-label="Main navigation">
+      <nav class="nav-links gap-1" id="navLinks" aria-label="Main navigation">
         <a href="#home" class="nav__link" data-nav>Home</a>
         <a href="#documentation" class="nav__link" data-nav>Documentation</a>
         <a href="#endpoints" class="nav__link" data-nav>Endpoints</a>
         <a href="#courses" class="nav__link" data-nav>Courses</a>
         <a href="#examples" class="nav__link" data-nav>Examples</a>
-        <a href="#getting-started" class="btn btn--primary btn--sm nav__cta">Get Started</a>
+        <a href="#getting-started" class="btn btn-primary btn-sm ml-2">Get Started</a>
       </nav>
 
-      <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
-        <svg class="icon icon--menu" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <button class="nav-toggle place-items-center w-[42px] h-[42px] bg-transparent border border-line rounded-[10px] cursor-pointer text-navy-900" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <svg class="icon-menu" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
           <path d="M3 6h18M3 12h18M3 18h18"/>
         </svg>
-        <svg class="icon icon--close" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <svg class="icon-close" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
           <path d="M6 6l12 12M18 6 6 18"/>
         </svg>
       </button>
@@ -55,35 +55,37 @@
   <main>
 
     <!-- 3. HERO SECTION -->
-    <section class="hero" id="home">
-      <div class="container hero__grid">
-        <div class="hero__content">
+    <section class="relative overflow-hidden pt-14 pb-16 sm:pt-20 sm:pb-24" id="home">
+      <div class="absolute inset-0 pointer-events-none" aria-hidden="true" style="background:radial-gradient(600px 300px at 8% 0%,rgba(47,99,255,0.08),transparent 70%),radial-gradient(500px 320px at 92% 10%,rgba(10,15,91,0.06),transparent 70%)"></div>
+
+      <div class="wrap relative grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+        <div class="min-w-0">
           <span class="badge">
             <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.5 5 5.5.8-4 3.9.9 5.5-4.9-2.6L6.1 17.2l.9-5.5-4-3.9 5.5-.8z"/></svg>
             Open Educational API
           </span>
-          <h1 class="hero__title">Explore academic programs through a <span class="hero__highlight">simple API</span>.</h1>
-          <p class="hero__lead">UDD Courses API provides structured information about academic programs offered by Universidad de Dagupan, making it easy to access, explore, and learn from real-world educational data.</p>
-          <div class="hero__actions">
-            <a href="#courses" class="btn btn--primary">Explore Courses</a>
-            <a href="#documentation" class="btn btn--ghost">Read Documentation</a>
+          <h1 class="mt-5 text-[clamp(2.1rem,8vw,3.4rem)] leading-[1.08] font-extrabold tracking-tight text-navy-900">Explore academic programs through a <span class="bg-linear-to-r from-accent to-accent-2 bg-clip-text text-transparent">simple API</span>.</h1>
+          <p class="mt-5 text-[16.5px] sm:text-[17.5px] text-muted max-w-[52ch]">UDD Courses API provides structured information about academic programs offered by Universidad de Dagupan, making it easy to access, explore, and learn from real-world educational data.</p>
+          <div class="mt-8 flex flex-col sm:flex-row gap-3.5 sm:gap-4">
+            <a href="#courses" class="btn btn-primary w-full sm:w-auto">Explore Courses</a>
+            <a href="#documentation" class="btn btn-ghost w-full sm:w-auto">Read Documentation</a>
           </div>
-          <p class="hero__hint">
-            <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>
+          <p class="mt-7 inline-flex items-center gap-2 text-[13.5px] text-muted">
+            <svg class="text-green" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>
             Fetch JSON over HTTP. No authentication required.
           </p>
         </div>
 
         <!-- 4. API PREVIEW -->
-        <div class="apipreview reveal">
-          <div class="apipreview__bar">
-            <span class="apipreview__dots" aria-hidden="true"><i></i><i></i><i></i></span>
-            <span class="apipreview__method">GET</span>
-            <span class="apipreview__path">/data/courses.json</span>
-            <span class="apipreview__status">200 OK</span>
-            <span class="apipreview__json">JSON</span>
+        <div class="apipreview reveal min-w-0">
+          <div class="apipreview-bar">
+            <span class="flex gap-1.5" aria-hidden="true"><i class="w-[11px] h-[11px] rounded-full bg-[#FC6A5D]"></i><i class="w-[11px] h-[11px] rounded-full bg-[#FDBF4D]"></i><i class="w-[11px] h-[11px] rounded-full bg-[#63C953]"></i></span>
+            <span class="bg-accent text-white font-bold text-[12px] px-2.5 py-0.5 rounded-md">GET</span>
+            <span class="text-[#c9d4ff]">/data/courses.json</span>
+            <span class="text-[#7bd88f] text-xs font-semibold ml-auto">200 OK</span>
+            <span class="text-[11px] font-bold tracking-wide text-navy-900 bg-soft px-2 py-0.5 rounded-md">JSON</span>
           </div>
-          <div class="apipreview__body">
+          <div class="apipreview-body">
 <pre><code><span class="c-punc">{</span>
   <span class="c-key">"schools"</span><span class="c-punc">:</span> <span class="c-punc">[</span>
     <span class="c-punc">{</span>
@@ -105,32 +107,32 @@
     </section>
 
     <!-- 5. QUICK OVERVIEW -->
-    <section class="stats">
-      <div class="container">
-        <div class="stats__grid">
+    <section class="pt-2 pb-14 sm:pb-16">
+      <div class="wrap">
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5">
           <div class="stat-card reveal">
-            <span class="stat-card__icon stat-card__icon--blue">
+            <span class="stat-card__icon bg-soft text-accent">
               <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V9M10 21V3M16 21v-8M22 21H2"/></svg>
             </span>
             <strong class="stat-card__value" id="statSchools">0</strong>
             <span class="stat-card__label">Schools</span>
           </div>
           <div class="stat-card reveal">
-            <span class="stat-card__icon stat-card__icon--navy">
+            <span class="stat-card__icon bg-[#E7E9F8] text-navy-900">
               <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 9 12 4 2 9l10 5 10-5z"/><path d="M6 11.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-4.5"/></svg>
             </span>
             <strong class="stat-card__value" id="statCourses">0</strong>
             <span class="stat-card__label">Programs</span>
           </div>
           <div class="stat-card reveal">
-            <span class="stat-card__icon stat-card__icon--gold">
+            <span class="stat-card__icon bg-[#FDF3E3] text-gold">
               <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6l7-1v13l-7 1z"/><path d="M15 5l6 2v13l-6-2"/><path d="M8 6 2 8v13l6-2"/></svg>
             </span>
             <strong class="stat-card__value">JSON</strong>
             <span class="stat-card__label">Response Format</span>
           </div>
           <div class="stat-card reveal">
-            <span class="stat-card__icon stat-card__icon--green">
+            <span class="stat-card__icon bg-[#E5F7EC] text-green">
               <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
             </span>
             <strong class="stat-card__value">GET</strong>
@@ -141,132 +143,132 @@
     </section>
 
     <!-- 6. WHAT IS UDD COURSES API? -->
-    <section class="section what">
-      <div class="container section__narrow">
+    <section class="py-14 sm:py-20 bg-white border-y border-line">
+      <div class="wrap mx-auto max-w-[760px] text-center">
         <span class="eyebrow">What is it?</span>
-        <h2 class="section__title">Academic data, made accessible.</h2>
-        <p class="section__intro">UDD Courses API provides structured information about schools and academic programs at Universidad de Dagupan in an easy-to-consume JSON format.</p>
+        <h2 class="section-title">Academic data, made accessible.</h2>
+        <p class="section-intro">UDD Courses API provides structured information about schools and academic programs at Universidad de Dagupan in an easy-to-consume JSON format.</p>
 
-        <div class="what__grid">
-          <div class="what-item reveal"><span class="what-item__dot"></span><p><strong>Browse</strong> academic programs</p></div>
-          <div class="what-item reveal"><span class="what-item__dot"></span><p><strong>Search</strong> courses</p></div>
-          <div class="what-item reveal"><span class="what-item__dot"></span><p><strong>Filter</strong> programs by school</p></div>
-          <div class="what-item reveal"><span class="what-item__dot"></span><p><strong>Learn</strong> how APIs work</p></div>
-          <div class="what-item reveal"><span class="what-item__dot"></span><p><strong>Practice</strong> making HTTP requests</p></div>
-          <div class="what-item reveal"><span class="what-item__dot"></span><p><strong>Build</strong> educational projects</p></div>
-          <div class="what-item reveal"><span class="what-item__dot"></span><p><strong>Experiment</strong> with JSON data</p></div>
+        <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3.5 text-left max-w-[620px] mx-auto">
+          <div class="what-item reveal"><span class="what-item__dot"></span><p class="text-base text-[#2D3748]"><strong class="font-bold">Browse</strong> academic programs</p></div>
+          <div class="what-item reveal"><span class="what-item__dot"></span><p class="text-base text-[#2D3748]"><strong class="font-bold">Search</strong> courses</p></div>
+          <div class="what-item reveal"><span class="what-item__dot"></span><p class="text-base text-[#2D3748]"><strong class="font-bold">Filter</strong> programs by school</p></div>
+          <div class="what-item reveal"><span class="what-item__dot"></span><p class="text-base text-[#2D3748]"><strong class="font-bold">Learn</strong> how APIs work</p></div>
+          <div class="what-item reveal"><span class="what-item__dot"></span><p class="text-base text-[#2D3748]"><strong class="font-bold">Practice</strong> making HTTP requests</p></div>
+          <div class="what-item reveal"><span class="what-item__dot"></span><p class="text-base text-[#2D3748]"><strong class="font-bold">Build</strong> educational projects</p></div>
+          <div class="what-item reveal"><span class="what-item__dot"></span><p class="text-base text-[#2D3748]"><strong class="font-bold">Experiment</strong> with JSON data</p></div>
         </div>
       </div>
     </section>
 
     <!-- 7. WHO IS IT FOR? -->
-    <section class="section audience">
-      <div class="container">
+    <section class="py-14 sm:py-20">
+      <div class="wrap">
         <span class="eyebrow">Who is it for?</span>
-        <h2 class="section__title">Built for curious minds.</h2>
-        <div class="audience__grid">
+        <h2 class="section-title">Built for curious minds.</h2>
+        <div class="mt-11 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
           <article class="persona reveal">
-            <span class="persona__icon persona__icon--blue">
+            <span class="persona__icon bg-soft text-accent">
               <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
             </span>
-            <h3>Students</h3>
-            <p>Learn how APIs, JSON, and HTTP requests work using familiar academic data.</p>
+            <h3 class="text-[18.5px] font-bold text-navy-900 mb-2">Students</h3>
+            <p class="text-[14.5px] text-muted">Learn how APIs, JSON, and HTTP requests work using familiar academic data.</p>
           </article>
           <article class="persona reveal">
-            <span class="persona__icon persona__icon--navy">
+            <span class="persona__icon bg-[#E7E9F8] text-navy-900">
               <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
             </span>
-            <h3>Developers</h3>
-            <p>Use structured course information in applications, prototypes, and educational projects.</p>
+            <h3 class="text-[18.5px] font-bold text-navy-900 mb-2">Developers</h3>
+            <p class="text-[14.5px] text-muted">Use structured course information in applications, prototypes, and educational projects.</p>
           </article>
           <article class="persona reveal">
-            <span class="persona__icon persona__icon--gold">
+            <span class="persona__icon bg-[#FDF3E3] text-gold">
               <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-3.5"/></svg>
             </span>
-            <h3>Educators</h3>
-            <p>Use the API as a simple teaching resource for demonstrating API consumption.</p>
+            <h3 class="text-[18.5px] font-bold text-navy-900 mb-2">Educators</h3>
+            <p class="text-[14.5px] text-muted">Use the API as a simple teaching resource for demonstrating API consumption.</p>
           </article>
           <article class="persona reveal">
-            <span class="persona__icon persona__icon--green">
+            <span class="persona__icon bg-[#E5F7EC] text-green">
               <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9 9a3 3 0 1 1 6 0c0 1.5-1.5 2-3 3.5S9 14 9 15h6"/><path d="M12 17.5h.01"/></svg>
             </span>
-            <h3>Learners</h3>
-            <p>Practice working with real-world structured data instead of random placeholder data.</p>
+            <h3 class="text-[18.5px] font-bold text-navy-900 mb-2">Learners</h3>
+            <p class="text-[14.5px] text-muted">Practice working with real-world structured data instead of random placeholder data.</p>
           </article>
         </div>
       </div>
     </section>
 
     <!-- 8. AVAILABLE DATA -->
-    <section class="section schools" id="schools">
-      <div class="container">
+    <section class="py-14 sm:py-20 bg-linear-to-b from-mist to-soft-2" id="schools">
+      <div class="wrap">
         <span class="eyebrow">Available data</span>
-        <h2 class="section__title">Schools you can explore.</h2>
-        <p class="section__intro">Every program belongs to one of the schools below. Click a school to filter the explorer.</p>
-        <div class="schools__grid" id="schoolsGrid">
+        <h2 class="section-title">Schools you can explore.</h2>
+        <p class="section-intro">Every program belongs to one of the schools below. Click a school to filter the explorer.</p>
+        <div class="mt-11 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-[18px]" id="schoolsGrid">
           <div class="skeleton-card"></div>
           <div class="skeleton-card"></div>
           <div class="skeleton-card"></div>
           <div class="skeleton-card"></div>
         </div>
-        <div class="data-error" id="schoolsError" hidden>
-          <p>Unable to load courses.</p>
-          <button class="btn btn--ghost btn--sm" id="retryBtn">Try again</button>
+        <div class="text-center mt-7 text-muted" id="schoolsError" hidden>
+          <p class="mb-3.5 font-semibold text-red">Unable to load courses.</p>
+          <button class="btn btn-ghost btn-sm" id="retryBtn">Try again</button>
         </div>
       </div>
     </section>
 
     <!-- 9. COURSE EXPLORER -->
-    <section class="section explorer" id="courses">
-      <div class="container">
+    <section class="py-14 sm:py-20 bg-white border-y border-line" id="courses">
+      <div class="wrap">
         <span class="eyebrow">Course Explorer</span>
-        <h2 class="section__title">Explore available programs.</h2>
-        <p class="section__intro">Search by course name, degree, major, or specialization. Filter to a single school, or browse everything.</p>
+        <h2 class="section-title">Explore available programs.</h2>
+        <p class="section-intro">Search by course name, degree, major, or specialization. Filter to a single school, or browse everything.</p>
 
-        <div class="explorer__controls">
+        <div class="mt-9 flex flex-col md:flex-row gap-3.5 max-w-[720px] mx-auto">
           <label class="explorer__search">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.35-4.35"/></svg>
+            <svg class="flex-none" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.35-4.35"/></svg>
             <input type="search" id="searchInput" placeholder="Search courses..." autocomplete="off" />
           </label>
           <label class="explorer__select">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h18M6 12h12M10 19h4"/></svg>
+            <svg class="flex-none" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h18M6 12h12M10 19h4"/></svg>
             <select id="schoolFilter">
               <option value="all">All Schools</option>
             </select>
           </label>
         </div>
 
-        <div class="explorer__meta" id="explorerMeta"></div>
+        <p class="mt-5 text-center text-sm font-semibold text-muted" id="explorerMeta"></p>
 
-        <div class="explorer__loading" id="explorerLoading">
+        <div class="mt-10 flex items-center justify-center gap-3 text-muted font-semibold" id="explorerLoading">
           <span class="spinner" aria-hidden="true"></span>
           Loading courses...
         </div>
 
-        <div class="explorer__grid" id="explorerGrid"></div>
+        <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-[18px]" id="explorerGrid"></div>
 
-        <div class="explorer__empty" id="explorerEmpty" hidden>
+        <div class="text-center pt-12 pb-2 text-muted font-semibold" id="explorerEmpty" hidden>
           <p>No programs match your search.</p>
-          <p class="explorer__empty-sub">Try a different keyword or reset the filters.</p>
+          <p class="font-normal text-sm mt-1">Try a different keyword or reset the filters.</p>
         </div>
       </div>
     </section>
 
     <!-- 10. API ENDPOINTS -->
-    <section class="section docs" id="endpoints">
-      <div class="container section__narrow">
+    <section class="py-14 sm:py-20" id="endpoints">
+      <div class="wrap mx-auto max-w-[760px] text-center">
         <span class="eyebrow">API Endpoints</span>
-        <h2 class="section__title">Three endpoints. Everything you need.</h2>
-        <p class="section__intro">Fetch everything at once, or access a single school or program directly by its ID.</p>
+        <h2 class="section-title">Three endpoints. Everything you need.</h2>
+        <p class="section-intro">Fetch everything at once, or access a single school or program directly by its ID.</p>
 
-        <div class="endpoints">
+        <div class="mt-9 grid gap-4 text-left">
           <article class="endpoint reveal">
-            <div class="endpoint__head">
+            <div class="flex flex-wrap items-center gap-3">
               <span class="endpoint__method">GET</span>
               <code class="endpoint__path">/data/courses.json</code>
             </div>
-            <p class="endpoint__desc">Returns all available schools and their academic programs.</p>
-            <div class="endpoint__example">
+            <p class="mt-3.5 text-muted text-[15px]">Returns all available schools and their academic programs.</p>
+            <div class="mt-5 bg-mist border border-line rounded-xl p-4 sm:p-[18px] grid gap-2.5">
               <span class="endpoint__line">
                 <span class="endpoint__tag">Example</span>
                 <code>GET /data/courses.json</code>
@@ -279,12 +281,12 @@
           </article>
 
           <article class="endpoint reveal">
-            <div class="endpoint__head">
+            <div class="flex flex-wrap items-center gap-3">
               <span class="endpoint__method">GET</span>
               <code class="endpoint__path">/data/schools/{id}.json</code>
             </div>
-            <p class="endpoint__desc">Returns a single school and its programs. Replace <span class="c-endpoint">{id}</span> with a school ID (1&ndash;8).</p>
-            <div class="endpoint__example">
+            <p class="mt-3.5 text-muted text-[15px]">Returns a single school and its programs. Replace <span class="c-endpoint">{id}</span> with a school ID (1&ndash;8).</p>
+            <div class="mt-5 bg-mist border border-line rounded-xl p-4 sm:p-[18px] grid gap-2.5">
               <span class="endpoint__line">
                 <span class="endpoint__tag">Example</span>
                 <code>GET https://luigibarte4563.github.io/udd-courses-api/data/schools/1.json</code>
@@ -301,12 +303,12 @@
           </article>
 
           <article class="endpoint reveal">
-            <div class="endpoint__head">
+            <div class="flex flex-wrap items-center gap-3">
               <span class="endpoint__method">GET</span>
               <code class="endpoint__path">/data/courses/{id}.json</code>
             </div>
-            <p class="endpoint__desc">Returns a single academic program with its school information. Replace <span class="c-endpoint">{id}</span> with a course ID (1&ndash;24).</p>
-            <div class="endpoint__example">
+            <p class="mt-3.5 text-muted text-[15px]">Returns a single academic program with its school information. Replace <span class="c-endpoint">{id}</span> with a course ID (1&ndash;24).</p>
+            <div class="mt-5 bg-mist border border-line rounded-xl p-4 sm:p-[18px] grid gap-2.5">
               <span class="endpoint__line">
                 <span class="endpoint__tag">Example</span>
                 <code>GET https://luigibarte4563.github.io/udd-courses-api/data/courses/1.json</code>
@@ -326,15 +328,15 @@
     </section>
 
     <!-- 11. RESPONSE STRUCTURE -->
-    <section class="section docs docs--alt" id="response">
-      <div class="container">
-        <div class="section__narrow">
+    <section class="py-14 sm:py-20 bg-white border-y border-line" id="response">
+      <div class="wrap">
+        <div class="mx-auto max-w-[760px] text-center">
           <span class="eyebrow">Response Structure</span>
-          <h2 class="section__title">Understand the data.</h2>
-          <p class="section__intro">The API returns one JSON object that groups every academic program under its school. Here is the shape you will receive &mdash; both from the full list and from the by-ID endpoints.</p>
+          <h2 class="section-title">Understand the data.</h2>
+          <p class="section-intro">The API returns one JSON object that groups every academic program under its school. Here is the shape you will receive &mdash; both from the full list and from the by-ID endpoints.</p>
         </div>
 
-        <div class="docs__split">
+        <div class="mt-11 grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-start">
           <div class="codeblock">
             <div class="codeblock__bar">
               <span>response.json</span>
@@ -352,42 +354,42 @@
 <span class="c-punc">}</span></code></pre>
           </div>
 
-          <div class="fields">
+          <div class="grid gap-2.5 sm:gap-3">
             <div class="field reveal">
-              <div class="field__head"><code>schools</code><span class="field__type">array</span></div>
-              <p>Contains the list of academic schools.</p>
+              <div class="field__head flex items-center justify-between gap-2.5"><code>schools</code><span class="field__type">array</span></div>
+              <p class="mt-1 text-[13.5px] text-muted">Contains the list of academic schools.</p>
             </div>
             <div class="field reveal">
-              <div class="field__head"><code>id</code><span class="field__type">number</span></div>
-              <p>Unique identifier for the school or course.</p>
+              <div class="field__head flex items-center justify-between gap-2.5"><code>id</code><span class="field__type">number</span></div>
+              <p class="mt-1 text-[13.5px] text-muted">Unique identifier for the school or course.</p>
             </div>
             <div class="field reveal">
-              <div class="field__head"><code>name</code><span class="field__type">string</span></div>
-              <p>Name of the school or academic program.</p>
+              <div class="field__head flex items-center justify-between gap-2.5"><code>name</code><span class="field__type">string</span></div>
+              <p class="mt-1 text-[13.5px] text-muted">Name of the school or academic program.</p>
             </div>
             <div class="field reveal">
-              <div class="field__head"><code>code</code><span class="field__type">string</span></div>
-              <p>Short identifier for the school.</p>
+              <div class="field__head flex items-center justify-between gap-2.5"><code>code</code><span class="field__type">string</span></div>
+              <p class="mt-1 text-[13.5px] text-muted">Short identifier for the school.</p>
             </div>
             <div class="field reveal">
-              <div class="field__head"><code>courses</code><span class="field__type">array</span></div>
-              <p>Contains the academic programs belonging to the school.</p>
+              <div class="field__head flex items-center justify-between gap-2.5"><code>courses</code><span class="field__type">array</span></div>
+              <p class="mt-1 text-[13.5px] text-muted">Contains the academic programs belonging to the school.</p>
             </div>
             <div class="field reveal">
-              <div class="field__head"><code>degree</code><span class="field__type">string</span></div>
-              <p>Degree or program type.</p>
+              <div class="field__head flex items-center justify-between gap-2.5"><code>degree</code><span class="field__type">string</span></div>
+              <p class="mt-1 text-[13.5px] text-muted">Degree or program type.</p>
             </div>
             <div class="field reveal">
-              <div class="field__head"><code>major</code><span class="field__type">string</span></div>
-              <p>Major associated with the program, when applicable.</p>
+              <div class="field__head flex items-center justify-between gap-2.5"><code>major</code><span class="field__type">string</span></div>
+              <p class="mt-1 text-[13.5px] text-muted">Major associated with the program, when applicable.</p>
             </div>
             <div class="field reveal">
-              <div class="field__head"><code>specialization</code><span class="field__type">string</span></div>
-              <p>Specialization associated with the program, when applicable.</p>
+              <div class="field__head flex items-center justify-between gap-2.5"><code>specialization</code><span class="field__type">string</span></div>
+              <p class="mt-1 text-[13.5px] text-muted">Specialization associated with the program, when applicable.</p>
             </div>
             <div class="field reveal">
-              <div class="field__head"><code>school</code><span class="field__type">object</span></div>
-              <p>School details included with each program in the by-ID course response.</p>
+              <div class="field__head flex items-center justify-between gap-2.5"><code>school</code><span class="field__type">object</span></div>
+              <p class="mt-1 text-[13.5px] text-muted">School details included with each program in the by-ID course response.</p>
             </div>
           </div>
         </div>
@@ -395,18 +397,18 @@
     </section>
 
     <!-- 12. HOW TO USE THE API -->
-    <section class="section docs" id="documentation">
-      <div class="container section__narrow">
+    <section class="py-14 sm:py-20" id="documentation">
+      <div class="wrap mx-auto max-w-[820px] text-center">
         <span class="eyebrow">How to use the API</span>
-        <h2 class="section__title">Start using the API</h2>
+        <h2 class="section-title">Start using the API</h2>
 
-        <ol class="steps">
+        <ol class="mt-11 grid gap-4 text-left">
           <li class="step reveal">
             <span class="step__num">1</span>
             <div class="step__body">
               <h3>Make a GET request</h3>
               <p>Point your browser, terminal, or code at the courses endpoint.</p>
-              <div class="codeblock codeblock--small">
+              <div class="codeblock codeblock--small mt-1">
 <pre><code>GET <span class="c-endpoint">https://luigibarte4563.github.io/udd-courses-api/data/courses.json</span></code></pre>
               </div>
             </div>
@@ -416,7 +418,7 @@
             <div class="step__body">
               <h3>Receive the JSON response</h3>
               <p>The server responds with <span class="c-endpoint">200 OK</span> and a JSON object containing all schools and programs.</p>
-              <div class="codeblock codeblock--small">
+              <div class="codeblock codeblock--small mt-1">
 <pre><code><span class="c-punc">{</span>
   <span class="c-key">"schools"</span><span class="c-punc">:</span> <span class="c-punc">[</span><span class="c-punc"> ...</span><span class="c-punc"> ]</span>
 <span class="c-punc">}</span></code></pre>
@@ -428,7 +430,7 @@
             <div class="step__body">
               <h3>Use the data in your application</h3>
               <p>Fetch the data with <span class="c-endpoint">fetch()</span>, parse the JSON, and use it however you like.</p>
-              <div class="codeblock codeblock--small">
+              <div class="codeblock codeblock--small mt-1">
 <pre><code><span class="c-kw">const</span> response <span class="c-punc">=</span> <span class="c-kw">await</span> fetch(
   <span class="c-str">"/data/courses.json"</span>
 );
@@ -444,16 +446,16 @@ console<span class="c-punc">.</span>log(data);</code></pre>
     </section>
 
     <!-- 13 + 14 + 15. EXAMPLES -->
-    <section class="section docs docs--alt" id="examples">
-      <div class="container">
-        <div class="section__narrow">
+    <section class="py-14 sm:py-20 bg-white border-y border-line" id="examples">
+      <div class="wrap">
+        <div class="mx-auto max-w-[760px] text-center">
           <span class="eyebrow">Examples</span>
-          <h2 class="section__title">Code you can copy.</h2>
-          <p class="section__intro">JavaScript examples for fetching, finding, and filtering programs &mdash; pointed at the live API hosted on GitHub Pages.</p>
+          <h2 class="section-title">Code you can copy.</h2>
+          <p class="section-intro">JavaScript examples for fetching, finding, and filtering programs &mdash; pointed at the live API hosted on GitHub Pages.</p>
         </div>
 
-        <div class="examples">
-          <article class="example-card reveal">
+        <div class="mt-11 grid gap-6 text-left">
+          <article class="example-card reveal min-w-0">
             <div class="codeblock">
               <div class="codeblock__bar">
                 <span>Fetch all courses</span>
@@ -472,7 +474,7 @@ console<span class="c-punc">.</span>log(data<span class="c-punc">.</span>schools
             </div>
           </article>
 
-          <article class="example-card reveal">
+          <article class="example-card reveal min-w-0">
             <div class="codeblock">
               <div class="codeblock__bar">
                 <span>Finding a course</span>
@@ -493,10 +495,10 @@ console<span class="c-punc">.</span>log(data<span class="c-punc">.</span>schools
 
 console<span class="c-punc">.</span>log(course);</code></pre>
             </div>
-            <p class="example-card__note">This example retrieves course ID 1 from the available programs.</p>
+            <p class="example-card__note mt-3 text-[14.5px] text-muted min-w-0 [overflow-wrap:anywhere]">This example retrieves course ID 1 from the available programs.</p>
           </article>
 
-          <article class="example-card reveal">
+          <article class="example-card reveal min-w-0">
             <div class="codeblock">
               <div class="codeblock__bar">
                 <span>Filtering courses</span>
@@ -521,10 +523,10 @@ console<span class="c-punc">.</span>log(course);</code></pre>
 
 console<span class="c-punc">.</span>log(courses);</code></pre>
             </div>
-            <p class="example-card__note">Filter the returned data to create custom searches.</p>
+            <p class="example-card__note mt-3 text-[14.5px] text-muted min-w-0 [overflow-wrap:anywhere]">Filter the returned data to create custom searches.</p>
           </article>
 
-          <article class="example-card reveal">
+          <article class="example-card reveal min-w-0">
             <div class="codeblock">
               <div class="codeblock__bar">
                 <span>Access a course by ID</span>
@@ -542,38 +544,38 @@ console<span class="c-punc">.</span>log(courses);</code></pre>
 
 console<span class="c-punc">.</span>log(course<span class="c-punc">.</span>name);</code></pre>
             </div>
-            <p class="example-card__note">Access a program directly with its ID. The same pattern works for schools: <span class="c-endpoint">https://luigibarte4563.github.io/udd-courses-api/data/schools/1.json</span>.</p>
+            <p class="example-card__note mt-3 text-[14.5px] text-muted min-w-0 [overflow-wrap:anywhere]">Access a program directly with its ID. The same pattern works for schools: <span class="c-endpoint">https://luigibarte4563.github.io/udd-courses-api/data/schools/1.json</span>.</p>
           </article>
         </div>
       </div>
     </section>
 
     <!-- 16. TRY THE API -->
-    <section class="section tester" id="try">
-      <div class="container section__narrow">
+    <section class="py-14 sm:py-20 bg-linear-to-b from-soft-2 to-mist" id="try">
+      <div class="wrap mx-auto max-w-[820px] text-center">
         <span class="eyebrow">Try the API</span>
-        <h2 class="section__title">Try the API</h2>
-        <p class="section__intro">Send a real request and inspect the live response. Choose an endpoint, pick an ID, and hit Send.</p>
+        <h2 class="section-title">Try the API</h2>
+        <p class="section-intro">Send a real request and inspect the live response. Choose an endpoint, pick an ID, and hit Send.</p>
 
-        <div class="tester__box">
-          <div class="tester__request">
-            <span class="tester__method">GET</span>
-            <label class="tester__select">
-              <select id="testerResource">
+        <div class="mt-10 bg-white border border-line rounded-3xl overflow-hidden shadow-panel text-left">
+          <div class="flex flex-wrap items-center gap-2.5 sm:gap-3.5 p-4 sm:p-5 border-b border-line">
+            <span class="tester-method">GET</span>
+            <label class="tester-select flex-1 min-w-[130px]">
+              <select id="testerResource" class="w-full max-w-full">
                 <option value="all">/data/courses.json</option>
                 <option value="school">/data/schools/{id}.json</option>
                 <option value="course">/data/courses/{id}.json</option>
               </select>
             </label>
-            <label class="tester__select tester__select--id">
+            <label class="tester-select tester-select--id">
               <input type="number" id="testerId" value="1" min="1" aria-label="Resource ID" />
             </label>
-            <code class="tester__path" id="testerPath">/data/courses.json</code>
-            <button class="btn btn--primary btn--sm" id="sendBtn">Send Request</button>
+            <code class="tester-path order-last md:order-none w-full md:w-auto md:flex-1 md:min-w-0" id="testerPath">/data/courses.json</code>
+            <button class="btn btn-primary btn-sm md:ml-auto" id="sendBtn">Send Request</button>
           </div>
 
-          <div class="tester__response" id="testerResponse">
-            <div class="tester__empty">
+          <div class="min-h-[220px] max-h-[480px] overflow-auto" id="testerResponse">
+            <div class="grid place-items-center min-h-[220px] text-center text-muted p-6">
               <p>Press &ldquo;Send Request&rdquo; to see the response.</p>
             </div>
           </div>
@@ -582,53 +584,54 @@ console<span class="c-punc">.</span>log(course<span class="c-punc">.</span>name)
     </section>
 
     <!-- 17. ERROR HANDLING -->
-    <section class="section errors">
-      <div class="container section__narrow">
+    <section class="py-14 sm:py-20">
+      <div class="wrap mx-auto max-w-[760px] text-center">
         <span class="eyebrow">Error Handling</span>
-        <h2 class="section__title">Common responses.</h2>
-        <p class="section__intro">The API keeps things simple. Here is what you may encounter.</p>
-        <div class="errors__grid">
+        <h2 class="section-title">Common responses.</h2>
+        <p class="section-intro">The API keeps things simple. Here is what you may encounter.</p>
+        <div class="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-[18px] text-left">
           <article class="error-card error-card--ok reveal">
             <span class="error-card__code">200 OK</span>
-            <p>The request was successful.</p>
+            <p class="text-[14.5px] text-muted">The request was successful.</p>
           </article>
           <article class="error-card error-card--warn reveal">
             <span class="error-card__code">404 Not Found</span>
-            <p>The requested resource could not be found.</p>
+            <p class="text-[14.5px] text-muted">The requested resource could not be found.</p>
           </article>
           <article class="error-card error-card--err reveal">
             <span class="error-card__code">Network Error</span>
-            <p>Check your internet connection or verify the API URL.</p>
+            <p class="text-[14.5px] text-muted">Check your internet connection or verify the API URL.</p>
           </article>
         </div>
       </div>
     </section>
 
     <!-- 18. GETTING STARTED CTA -->
-    <section class="section cta" id="getting-started">
-      <div class="container">
-        <div class="cta__box reveal">
-          <span class="badge badge--light">Get Started</span>
-          <h2 class="cta__title">Ready to explore UDD programs?</h2>
-          <p class="cta__text">Start exploring the API and build your first project using real academic data.</p>
-          <div class="cta__actions">
-            <a href="#courses" class="btn btn--light">Explore Courses</a>
-            <a href="#documentation" class="btn btn--outline-light">Read Documentation</a>
+    <section class="pt-10 pb-16 sm:pb-20" id="getting-started">
+      <div class="wrap">
+        <div class="reveal relative overflow-hidden rounded-[28px] px-5 py-12 sm:px-10 sm:py-16 text-center text-white shadow-lift"
+             style="background:radial-gradient(700px 300px at 15% 0%,rgba(47,99,255,0.35),transparent 60%),radial-gradient(600px 320px at 90% 100%,rgba(122,160,255,0.2),transparent 60%),linear-gradient(135deg,#0A0F5B,#0C1045)">
+          <span class="badge badge-light">Get Started</span>
+          <h2 class="mt-4 text-[clamp(1.75rem,6vw,2.6rem)] font-extrabold tracking-tight">Ready to explore UDD programs?</h2>
+          <p class="mx-auto mt-3.5 max-w-[46ch] text-white/80 text-base sm:text-[16.5px]">Start exploring the API and build your first project using real academic data.</p>
+          <div class="mt-7 flex flex-col sm:flex-row items-center justify-center gap-3.5">
+            <a href="#courses" class="btn btn-light w-full sm:w-auto">Explore Courses</a>
+            <a href="#documentation" class="btn btn-outline-light w-full sm:w-auto">Read Documentation</a>
           </div>
         </div>
       </div>
     </section>
 
     <!-- 19. GITHUB / SOURCE -->
-    <section class="section source">
-      <div class="container section__narrow">
-        <div class="source__box reveal">
-          <div class="source__icon">
+    <section class="pt-0 pb-14 sm:pb-20">
+      <div class="wrap mx-auto max-w-[760px]">
+        <div class="reveal bg-white border border-line rounded-3xl px-6 py-10 sm:p-12 text-center shadow-card">
+          <div class="w-[58px] h-[58px] mx-auto mb-4 grid place-items-center rounded-2xl bg-soft text-accent">
             <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 0 0-2.84 17.54c.45.08.61-.2.61-.44v-1.54c-2.5.54-3.03-1.2-3.03-1.2-.4-1.03-1-1.3-1-1.3-.82-.56.06-.55.06-.55.9.06 1.38.93 1.38.93.8 1.38 2.1.98 2.62.75.08-.58.31-.98.57-1.2-2-.23-4.1-1-4.1-4.45 0-.98.35-1.79.93-2.42-.09-.23-.4-1.15.09-2.4 0 0 .76-.24 2.48.92a8.6 8.6 0 0 1 4.52 0c1.72-1.16 2.48-.92 2.48-.92.49 1.25.18 2.17.09 2.4.58.63.93 1.44.93 2.42 0 3.46-2.1 4.22-4.11 4.45.32.28.61.83.61 1.67v2.48c0 .24.16.53.61.44A9 9 0 0 0 12 3z"/></svg>
           </div>
-          <h3 class="source__title">Open and learn.</h3>
-          <p class="source__text">Explore the project, understand how the data is structured, and use the API in your own learning projects.</p>
-          <a class="btn btn--ghost" href="https://github.com/Luigibarte4563/udd-courses-api" target="_blank" rel="noopener">
+          <h3 class="text-[22px] font-extrabold text-navy-900">Open and learn.</h3>
+          <p class="mx-auto mt-2.5 mb-5 max-w-[50ch] text-muted text-[15.5px]">Explore the project, understand how the data is structured, and use the API in your own learning projects.</p>
+          <a class="btn btn-ghost" href="https://github.com/Luigibarte4563/udd-courses-api" target="_blank" rel="noopener">
             View on GitHub
           </a>
         </div>
@@ -637,26 +640,26 @@ console<span class="c-punc">.</span>log(course<span class="c-punc">.</span>name)
   </main>
 
   <!-- 20. FOOTER -->
-  <footer class="footer">
-    <div class="container footer__inner">
-      <div class="footer__brand">
-        <a href="#home" class="nav__logo nav__logo--footer">
-          <span class="nav__logo-mark" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 7v10l9 5 9-5V7l-9-5z"/><path d="M3 7l9 5 9-5"/><path d="M12 12v10"/></svg>
+  <footer class="bg-navy-900 text-white/75 pt-12 sm:pt-14 pb-7 mt-10">
+    <div class="wrap flex flex-col md:flex-row md:justify-between gap-7 pb-8 border-b border-white/10">
+      <div class="max-w-[340px]">
+        <a href="#home" class="inline-flex items-center gap-2.5 text-white">
+          <span class="grid place-items-center w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-linear-to-br from-accent to-navy-900 text-white" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 7v10l9 5 9-5V7l-9-5z"/><path d="M3 7l9 5 9-5"/><path d="M12 12v10"/></svg>
           </span>
-          <span class="nav__logo-text">UDD <em>Courses API</em></span>
+          <span class="nav__logo-text font-extrabold text-[17px] tracking-tight">UDD <em>Courses API</em></span>
         </a>
-        <p>An educational API for exploring Universidad de Dagupan academic programs.</p>
+        <p class="mt-3.5 text-sm leading-relaxed">An educational API for exploring Universidad de Dagupan academic programs.</p>
       </div>
-      <nav class="footer__links" aria-label="Footer">
-        <a href="#documentation">Documentation</a>
-        <a href="#endpoints">Endpoints</a>
-        <a href="#courses">Courses</a>
-        <a href="#examples">Examples</a>
-        <a href="https://github.com/Luigibarte4563/Flutter.git" target="_blank" rel="noopener">GitHub</a>
+      <nav class="flex flex-col gap-2.5" aria-label="Footer">
+        <a href="#documentation" class="text-[14.5px] text-white/75 hover:text-white transition-colors">Documentation</a>
+        <a href="#endpoints" class="text-[14.5px] text-white/75 hover:text-white transition-colors">Endpoints</a>
+        <a href="#courses" class="text-[14.5px] text-white/75 hover:text-white transition-colors">Courses</a>
+        <a href="#examples" class="text-[14.5px] text-white/75 hover:text-white transition-colors">Examples</a>
+        <a href="https://github.com/Luigibarte4563/Flutter.git" target="_blank" rel="noopener" class="text-[14.5px] text-white/75 hover:text-white transition-colors">GitHub</a>
       </nav>
     </div>
-    <div class="container footer__bottom">
+    <div class="wrap flex flex-col sm:flex-row sm:justify-between gap-3 pt-6 text-[13px] text-white/50">
       <p>Built for learning and experimentation.</p>
       <p>&copy; <span id="year">2026</span> UDD Courses API</p>
     </div>

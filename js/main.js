@@ -175,7 +175,7 @@ function renderSchools() {
     .map(
       (school) => `
       <article class="school-card">
-        <div class="school-card__top">
+        <div class="flex items-start justify-between gap-2.5">
           <h3 class="school-card__name">${escapeHtml(school.name)}</h3>
           <span class="school-card__code">${escapeHtml(school.code)}</span>
         </div>
@@ -278,15 +278,15 @@ function renderExplorer() {
   grid.innerHTML = results
     .map(
       ({ course, school }, index) => `
-      <article class="course-card" style="animation-delay:${Math.min(index * 40, 320)}ms">
-        <h3 class="course-card__name">${escapeHtml(course.name)}</h3>
-        <div class="course-card__meta">
-          <p><strong>School:</strong> ${escapeHtml(school.name)}</p>
-          ${course.degree ? `<p><strong>Degree:</strong> ${escapeHtml(course.degree)}</p>` : ""}
-          ${course.major ? `<p><strong>Major:</strong> ${escapeHtml(course.major)}</p>` : ""}
-          ${course.specialization ? `<p><strong>Specialization:</strong> ${escapeHtml(course.specialization)}</p>` : ""}
+      <article class="course-card bg-mist border border-line rounded-2xl p-5 sm:p-6 flex flex-col gap-2.5 transition-all duration-200 hover:-translate-y-1 hover:shadow-panel hover:border-[#c7d4fe] hover:bg-white" style="animation-delay:${Math.min(index * 40, 320)}ms">
+        <h3 class="course-card__name text-[16.5px] font-bold text-navy-900 leading-snug">${escapeHtml(course.name)}</h3>
+        <div class="course-card__meta grid gap-1.5 text-[13.5px] text-muted">
+          <p><strong class="text-[#2D3748] font-semibold">School:</strong> ${escapeHtml(school.name)}</p>
+          ${course.degree ? `<p><strong class="text-[#2D3748] font-semibold">Degree:</strong> ${escapeHtml(course.degree)}</p>` : ""}
+          ${course.major ? `<p><strong class="text-[#2D3748] font-semibold">Major:</strong> ${escapeHtml(course.major)}</p>` : ""}
+          ${course.specialization ? `<p><strong class="text-[#2D3748] font-semibold">Specialization:</strong> ${escapeHtml(course.specialization)}</p>` : ""}
         </div>
-        <p class="course-card__id"><strong>Course ID:</strong> ${course.id}</p>
+        <p class="course-card__id mt-auto pt-3 border-t border-dashed border-line-strong font-mono text-[12.5px] text-muted font-semibold"><strong class="text-accent">Course ID:</strong> ${course.id}</p>
       </article>`
     )
     .join("");
@@ -351,7 +351,8 @@ function initTester() {
     if (pathEl) pathEl.textContent = "/" + path;
     if (idInput) {
       const hasId = resource && resource.value !== "all";
-      idInput.style.display = hasId ? "inline-flex" : "none";
+      const idWrap = idInput.closest(".tester-select--id");
+      if (idWrap) idWrap.style.display = hasId ? "inline-flex" : "none";
       if (hasId) idInput.focus();
     }
   };
@@ -372,8 +373,8 @@ async function runTester() {
   const fullUrl = await resolveApiUrl(url);
 
   box.innerHTML = `
-    <div class="tester__loading">
-      <span class="spinner" aria-hidden="true"></span>
+    <div class="grid place-items-center min-h-[220px] gap-3 text-muted font-semibold">
+      <span class="spinner w-[28px] h-[28px]" aria-hidden="true"></span>
       Fetching data...
     </div>`;
   if (btn) btn.disabled = true;
@@ -391,24 +392,24 @@ async function runTester() {
     const data = await response.json();
 
     box.innerHTML = `
-      <div class="tester__result">
-        <div class="tester__statusline">
-          <span class="tester__status">${response.status} OK</span>
-          <span class="tester__meta">${duration} ms &bull; application/json</span>
+      <div class="p-4 sm:p-6">
+        <div class="flex flex-wrap items-center gap-2.5 sm:gap-3 mb-4">
+          <span class="tester-status">${response.status} OK</span>
+          <span class="tester-status-meta text-[13px] text-muted font-mono">${duration} ms &bull; application/json</span>
         </div>
-        <p class="tester__url">${escapeHtml(fullUrl)}</p>
-        <pre>${highlightJson(JSON.stringify(data, null, 2))}</pre>
+        <p class="tester-url text-[12.5px] text-muted font-mono break-all mb-4">${escapeHtml(fullUrl)}</p>
+        <pre class="bg-navy-900 rounded-xl p-4 sm:p-5 overflow-auto font-mono text-[12px] sm:text-[12.8px] leading-relaxed text-[#dce4ff] whitespace-pre max-h-[320px]">${highlightJson(JSON.stringify(data, null, 2))}</pre>
       </div>`;
   } catch (err) {
     const duration = Math.max(1, Math.round(performance.now() - startedAt));
     box.innerHTML = `
-      <div class="tester__result">
-        <div class="tester__statusline">
-          <span class="tester__status is-error">Request failed</span>
-          <span class="tester__meta">${duration} ms</span>
+      <div class="p-4 sm:p-6">
+        <div class="flex flex-wrap items-center gap-2.5 sm:gap-3 mb-4">
+          <span class="tester-status is-error">Request failed</span>
+          <span class="tester-status-meta text-[13px] text-muted font-mono">${duration} ms</span>
         </div>
-        <p class="tester__url">${escapeHtml(fullUrl)}</p>
-        <pre>${escapeHtml(err.message)}</pre>
+        <p class="tester-url text-[12.5px] text-muted font-mono break-all mb-4">${escapeHtml(fullUrl)}</p>
+        <pre class="bg-navy-900 rounded-xl p-4 sm:p-5 overflow-auto font-mono text-[12px] sm:text-[12.8px] leading-relaxed text-[#dce4ff] whitespace-pre max-h-[320px]">${escapeHtml(err.message)}</pre>
       </div>`;
   } finally {
     if (btn) btn.disabled = false;

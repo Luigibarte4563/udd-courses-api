@@ -1,8 +1,8 @@
-﻿# UDD Courses API
+# UDD Courses API
 
 An educational API providing structured information about academic programs and courses offered by **Universidad de Dagupan**.
 
-The site is a simple vanilla HTML/CSS/JavaScript page that serves static JSON data â€” no database, no backend, no build step. Open it locally or publish it free on GitHub Pages.
+The site is a simple vanilla HTML/CSS/JavaScript page that serves static JSON data — no database, no backend, no build step. Open it locally or publish it free on GitHub Pages.
 
 ---
 
@@ -21,18 +21,18 @@ The site is a simple vanilla HTML/CSS/JavaScript page that serves static JSON da
 
 ```
 udd-courses-api/
-â”‚
-â”œâ”€â”€ index.html          # Landing page and documentation site
-â”œâ”€â”€ css/
-â”‚   â””â”€â”€ styles.css      # All styling
-â”œâ”€â”€ js/
-â”‚   â””â”€â”€ main.js         # Fetches the data and powers the UI
-â”œâ”€â”€ scripts/
-â”‚   â””â”€â”€ generate-endpoints.js  # Regenerates the by-ID JSON files
-â””â”€â”€ data/
-    â”œâ”€â”€ courses.json    # THE API â€” all the course data
-    â”œâ”€â”€ schools/        # One file per school: schools/{id}.json
-    â””â”€â”€ courses/        # One file per program: courses/{id}.json
+│
+├── index.html          # Landing page and documentation site
+├── css/
+│   └── styles.css      # All styling
+├── js/
+│   └── main.js         # Fetches the data and powers the UI
+├── scripts/
+│   └── generate-endpoints.js  # Regenerates the by-ID JSON files
+└── data/
+    ├── courses.json    # THE API — all the course data
+    ├── schools/        # One file per school: schools/{id}.json
+    └── courses/        # One file per program: courses/{id}.json
 ```
 
 The "API" is the folder `data/`. The website fetches it with normal `fetch()` calls and renders it, just like any client app would.
@@ -94,13 +94,13 @@ The by-ID files are generated from `courses.json`, so they always match the main
 
 `fetch()` does not work over the `file://` protocol, so serve the folder over HTTP. Pick **one** of these:
 
-### Option 1 â€” VS Code Live Server (easiest)
+### Option 1 — VS Code Live Server (easiest)
 
 1. Open the project folder in VS Code.
 2. Install the **Live Server** extension.
 3. Right-click `index.html` and choose **Open with Live Server**.
 
-### Option 2 â€” Python
+### Option 2 — Python
 
 ```bash
 cd udd-courses-api
@@ -109,7 +109,7 @@ python -m http.server 8080
 
 Then open http://localhost:8080
 
-### Option 3 â€” Node.js
+### Option 3 — Node.js
 
 ```bash
 cd udd-courses-api
@@ -118,7 +118,7 @@ npx serve .
 
 Then open http://localhost:3000
 
-> Any static file server works â€” this project has no build step, so whatever you use, just point it at the folder.
+> Any static file server works — this project has no build step, so whatever you use, just point it at the folder.
 
 ---
 
@@ -126,48 +126,20 @@ Then open http://localhost:3000
 
 GitHub Pages hosts static files for free and works perfectly with this project because the site uses relative paths (`data/courses.json`, not `/data/courses.json`).
 
-### Option A â€” Deploy from a branch (recommended)
+### Option A — Deploy from a branch (recommended)
 
 1. Create a repository on GitHub (e.g. `udd-courses-api`) and push this folder to it.
-2. Go to the repo on GitHub â†’ **Settings** â†’ **Pages**.
-3. Under **Build and deployment** â†’ **Source**, choose **Deploy from a branch**.
+2. Go to the repo on GitHub → **Settings** → **Pages**.
+3. Under **Build and deployment** → **Source**, choose **Deploy from a branch**.
 4. Select the branch (`main`) and folder (`/ (root)`).
 5. Click **Save**. GitHub will build and publish.
 
-This project is already live on GitHub Pages:
+Once you push the repo to GitHub, your site will be published at:
 
-- **Site:** https://luigibarte4563.github.io/udd-courses-api/
-- **API:** https://luigibarte4563.github.io/udd-courses-api/data/courses.json
+- **Site:** `https://<your-username>.github.io/udd-courses-api/`
+- **API:** `https://<your-username>.github.io/udd-courses-api/data/courses.json`
 
 If you fork the repo, your copy will be at `https://<your-username>.github.io/udd-courses-api/`.
-
-### Option B â€” Deploy a subfolder with Actions (advanced)
-
-If the files live in a subfolder of a larger repo, add a workflow at `.github/workflows/pages.yml`:
-
-```yaml
-name: Deploy to GitHub Pages
-on:
-  push:
-    branches: [main]
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Upload site
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: udd-courses-api
-      - name: Deploy
-        uses: actions/deploy-pages@v4
-```
-
-Then enable Pages under **Settings â†’ Pages** with **Source: GitHub Actions**.
 
 > One page cache note: after pushing changes, GitHub Pages can take a few minutes to update. Wait a bit and hard-refresh.
 
@@ -179,7 +151,7 @@ Then enable Pages under **Settings â†’ Pages** with **Source: GitHub Action
 
 ```js
 const response = await fetch(
-  "https://luigibarte4563.github.io/udd-courses-api/data/courses.json"
+  "https://<your-username>.github.io/udd-courses-api/data/courses.json"
 );
 
 const data = await response.json();
@@ -203,7 +175,7 @@ The same program can be fetched directly from its own endpoint:
 
 ```js
 const response = await fetch(
-  "https://luigibarte4563.github.io/udd-courses-api/data/courses/1.json"
+  "https://<your-username>.github.io/udd-courses-api/data/courses/1.json"
 );
 
 const course = await response.json();
@@ -215,7 +187,7 @@ Works the same way for schools:
 
 ```js
 const response = await fetch(
-  "https://luigibarte4563.github.io/udd-courses-api/data/schools/1.json"
+  "https://<your-username>.github.io/udd-courses-api/data/schools/1.json"
 );
 
 const school = await response.json();
@@ -239,7 +211,7 @@ console.log(courses);
 
 ## Customize the data
 
-All the content comes from `data/courses.json`. To add, remove, or edit programs, edit that file â€” the stats, school cards, and course explorer update automatically because they are calculated from the data at runtime.
+All the content comes from `data/courses.json`. To add, remove, or edit programs, edit that file — the stats, school cards, and course explorer update automatically because they are calculated from the data at runtime.
 
 After editing, regenerate the by-ID endpoints to keep them in sync:
 
@@ -249,14 +221,14 @@ node scripts/generate-endpoints.js
 
 Keep the structure intact:
 
-- `schools` â†’ array of schools
-- `id` â†’ unique number for each school / course
-- `name` â†’ school or program name
-- `code` â†’ short school identifier (e.g. `SITE`)
-- `courses` â†’ array of programs inside the school
-- `degree` â†’ program type (optional)
-- `major` â†’ major, when applicable (optional)
-- `specialization` â†’ specialization, when applicable (optional)
+- `schools` → array of schools
+- `id` → unique number for each school / course
+- `name` → school or program name
+- `code` → short school identifier (e.g. `SITE`)
+- `courses` → array of programs inside the school
+- `degree` → program type (optional)
+- `major` → major, when applicable (optional)
+- `specialization` → specialization, when applicable (optional)
 
 ---
 

@@ -6,25 +6,25 @@
       "code": "SITE",
       "courses": [
         {
-          "id": 101,
+          "id": 1,
           "name": "BS Computer Science - Data Science",
           "degree": "BS Computer Science",
           "specialization": "Data Science"
         },
         {
-          "id": 102,
+          "id": 2,
           "name": "BS Information Technology - Web Development",
           "degree": "BS Information Technology",
           "specialization": "Web Development"
         },
         {
-          "id": 103,
+          "id": 3,
           "name": "BS Information Technology - Multimedia Arts",
           "degree": "BS Information Technology",
           "specialization": "Multimedia Arts"
         },
         {
-          "id": 104,
+          "id": 4,
           "name": "BS Information Technology - Infrastructure with Cybersecurity",
           "degree": "BS Information Technology",
           "specialization": "Infrastructure with Cybersecurity"
@@ -37,22 +37,22 @@
       "code": "SOE",
       "courses": [
         {
-          "id": 201,
+          "id": 5,
           "name": "BS Civil Engineering",
           "degree": "BS Civil Engineering"
         },
         {
-          "id": 202,
+          "id": 6,
           "name": "BS Computer Engineering",
           "degree": "BS Computer Engineering"
         },
         {
-          "id": 203,
+          "id": 7,
           "name": "BS Electrical Engineering",
           "degree": "BS Electrical Engineering"
         },
         {
-          "id": 204,
+          "id": 8,
           "name": "BS Electronics Engineering",
           "degree": "BS Electronics Engineering"
         }
@@ -64,41 +64,41 @@
       "code": "STE",
       "courses": [
         {
-          "id": 301,
+          "id": 9,
           "name": "Bachelor of Early Childhood Education",
           "degree": "Bachelor of Early Childhood Education"
         },
         {
-          "id": 302,
+          "id": 10,
           "name": "Bachelor of Elementary Education",
           "degree": "Bachelor of Elementary Education"
         },
         {
-          "id": 303,
+          "id": 11,
           "name": "BSEd Major in English",
           "degree": "Bachelor of Secondary Education",
           "major": "English"
         },
         {
-          "id": 304,
+          "id": 12,
           "name": "BSEd Major in Filipino",
           "degree": "Bachelor of Secondary Education",
           "major": "Filipino"
         },
         {
-          "id": 305,
+          "id": 13,
           "name": "BSEd Major in Mathematics",
           "degree": "Bachelor of Secondary Education",
           "major": "Mathematics"
         },
         {
-          "id": 306,
+          "id": 14,
           "name": "BSEd Major in Science",
           "degree": "Bachelor of Secondary Education",
           "major": "Science"
         },
         {
-          "id": 307,
+          "id": 15,
           "name": "Bachelor of Special Needs Education",
           "degree": "Bachelor of Special Needs Education"
         }
@@ -110,18 +110,18 @@
       "code": "SBA",
       "courses": [
         {
-          "id": 401,
+          "id": 16,
           "name": "BS Accountancy",
           "degree": "BS Accountancy"
         },
         {
-          "id": 402,
+          "id": 17,
           "name": "BSBA - Financial Management",
           "degree": "BS Business Administration",
           "major": "Financial Management"
         },
         {
-          "id": 403,
+          "id": 18,
           "name": "BSBA - Marketing Management",
           "degree": "BS Business Administration",
           "major": "Marketing Management"
@@ -134,12 +134,12 @@
       "code": "SIHM",
       "courses": [
         {
-          "id": 501,
+          "id": 19,
           "name": "BS Tourism Management",
           "degree": "BS Tourism Management"
         },
         {
-          "id": 502,
+          "id": 20,
           "name": "BS Hospitality Management",
           "degree": "BS Hospitality Management"
         }
@@ -151,12 +151,12 @@
       "code": "SH",
       "courses": [
         {
-          "id": 601,
+          "id": 21,
           "name": "BA Communication",
           "degree": "BA Communication"
         },
         {
-          "id": 602,
+          "id": 22,
           "name": "BS Psychology",
           "degree": "BS Psychology"
         }
@@ -168,7 +168,7 @@
       "code": "SHS",
       "courses": [
         {
-          "id": 701,
+          "id": 23,
           "name": "BS Nursing",
           "degree": "BS Nursing"
         }
@@ -180,7 +180,7 @@
       "code": "SOC",
       "courses": [
         {
-          "id": 801,
+          "id": 24,
           "name": "BS Criminology",
           "degree": "BS Criminology"
         }

@@ -4,22 +4,22 @@
   "code": "SOE",
   "courses": [
     {
-      "id": 201,
+      "id": 5,
       "name": "BS Civil Engineering",
       "degree": "BS Civil Engineering"
     },
     {
-      "id": 202,
+      "id": 6,
       "name": "BS Computer Engineering",
       "degree": "BS Computer Engineering"
     },
     {
-      "id": 203,
+      "id": 7,
       "name": "BS Electrical Engineering",
       "degree": "BS Electrical Engineering"
     },
     {
-      "id": 204,
+      "id": 8,
       "name": "BS Electronics Engineering",
       "degree": "BS Electronics Engineering"
     }

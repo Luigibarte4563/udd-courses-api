@@ -92,7 +92,7 @@
       <span class="c-key">"code"</span><span class="c-punc">:</span> <span class="c-str">"SITE"</span><span class="c-punc">,</span>
       <span class="c-key">"courses"</span><span class="c-punc">:</span> <span class="c-punc">[</span>
         <span class="c-punc">{</span>
-          <span class="c-key">"id"</span><span class="c-punc">:</span> <span class="c-num">101</span><span class="c-punc">,</span>
+          <span class="c-key">"id"</span><span class="c-punc">:</span> <span class="c-num">1</span><span class="c-punc">,</span>
           <span class="c-key">"name"</span><span class="c-punc">:</span> <span class="c-str">"BS Computer Science - Data Science"</span>
         <span class="c-punc">}</span>
       <span class="c-punc">]</span>
@@ -287,7 +287,7 @@
             <div class="endpoint__example">
               <span class="endpoint__line">
                 <span class="endpoint__tag">Example</span>
-                <code>GET /data/schools/1.json</code>
+                <code>GET https://luigibarte4563.github.io/udd-courses-api/data/schools/1.json</code>
               </span>
               <span class="endpoint__line">
                 <span class="endpoint__tag">Returns</span>
@@ -305,15 +305,15 @@
               <span class="endpoint__method">GET</span>
               <code class="endpoint__path">/data/courses/{id}.json</code>
             </div>
-            <p class="endpoint__desc">Returns a single academic program with its school information. Replace <span class="c-endpoint">{id}</span> with a course ID (e.g. 101, 204, 501).</p>
+            <p class="endpoint__desc">Returns a single academic program with its school information. Replace <span class="c-endpoint">{id}</span> with a course ID (1&ndash;24).</p>
             <div class="endpoint__example">
               <span class="endpoint__line">
                 <span class="endpoint__tag">Example</span>
-                <code>GET /data/courses/102.json</code>
+                <code>GET https://luigibarte4563.github.io/udd-courses-api/data/courses/1.json</code>
               </span>
               <span class="endpoint__line">
                 <span class="endpoint__tag">Returns</span>
-                <code>BS Information Technology - Web Development</code>
+                <code>BS Computer Science - Data Science</code>
               </span>
               <span class="endpoint__line">
                 <span class="endpoint__tag endpoint__tag--ok">Response</span>
@@ -407,7 +407,7 @@
               <h3>Make a GET request</h3>
               <p>Point your browser, terminal, or code at the courses endpoint.</p>
               <div class="codeblock codeblock--small">
-<pre><code>GET <span class="c-endpoint">/data/courses.json</span></code></pre>
+<pre><code>GET <span class="c-endpoint">https://luigibarte4563.github.io/udd-courses-api/data/courses.json</span></code></pre>
               </div>
             </div>
           </li>
@@ -449,7 +449,7 @@ console<span class="c-punc">.</span>log(data);</code></pre>
         <div class="section__narrow">
           <span class="eyebrow">Examples</span>
           <h2 class="section__title">Code you can copy.</h2>
-          <p class="section__intro">JavaScript examples for fetching, finding, and filtering programs. Replace <code class="inline-code">YOUR_API_URL</code> with the URL where the API is hosted.</p>
+          <p class="section__intro">JavaScript examples for fetching, finding, and filtering programs &mdash; pointed at the live API hosted on GitHub Pages.</p>
         </div>
 
         <div class="examples">
@@ -463,7 +463,7 @@ console<span class="c-punc">.</span>log(data);</code></pre>
                 </button>
               </div>
 <pre class="copy-target" id="code-example-1"><code><span class="c-kw">const</span> response <span class="c-punc">=</span> <span class="c-kw">await</span> fetch(
-  <span class="c-str">"YOUR_API_URL/data/courses.json"</span>
+  <span class="c-str">"https://luigibarte4563.github.io/udd-courses-api/data/courses.json"</span>
 );
 
 <span class="c-kw">const</span> data <span class="c-punc">=</span> <span class="c-kw">await</span> response.json();
@@ -482,18 +482,18 @@ console<span class="c-punc">.</span>log(data<span class="c-punc">.</span>schools
                 </button>
               </div>
 <pre class="copy-target" id="code-example-2"><code><span class="c-kw">const</span> response <span class="c-punc">=</span> <span class="c-kw">await</span> fetch(
-  <span class="c-str">"YOUR_API_URL/data/courses.json"</span>
+  <span class="c-str">"https://luigibarte4563.github.io/udd-courses-api/data/courses.json"</span>
 );
 
 <span class="c-kw">const</span> data <span class="c-punc">=</span> <span class="c-kw">await</span> response.json();
 
 <span class="c-kw">const</span> course <span class="c-punc">=</span> data<span class="c-punc">.</span>schools
   <span class="c-punc">.</span>flatMap(school <span class="c-punc">=&gt;</span> school<span class="c-punc">.</span>courses)
-  <span class="c-punc">.</span>find(course <span class="c-punc">=&gt;</span> course<span class="c-punc">.</span>id <span class="c-punc">===</span> <span class="c-num">102</span>);
+  <span class="c-punc">.</span>find(course <span class="c-punc">=&gt;</span> course<span class="c-punc">.</span>id <span class="c-punc">===</span> <span class="c-num">1</span>);
 
 console<span class="c-punc">.</span>log(course);</code></pre>
             </div>
-            <p class="example-card__note">This example retrieves course ID 102 from the available programs.</p>
+            <p class="example-card__note">This example retrieves course ID 1 from the available programs.</p>
           </article>
 
           <article class="example-card reveal">
@@ -506,7 +506,7 @@ console<span class="c-punc">.</span>log(course);</code></pre>
                 </button>
               </div>
 <pre class="copy-target" id="code-example-3"><code><span class="c-kw">const</span> response <span class="c-punc">=</span> <span class="c-kw">await</span> fetch(
-  <span class="c-str">"YOUR_API_URL/data/courses.json"</span>
+  <span class="c-str">"https://luigibarte4563.github.io/udd-courses-api/data/courses.json"</span>
 );
 
 <span class="c-kw">const</span> data <span class="c-punc">=</span> <span class="c-kw">await</span> response.json();
@@ -535,14 +535,14 @@ console<span class="c-punc">.</span>log(courses);</code></pre>
               </div>
 <pre class="copy-target" id="code-example-4"><code><span class="c-comment">// Fetch the course directly by its ID</span>
 <span class="c-kw">const</span> response <span class="c-punc">=</span> <span class="c-kw">await</span> fetch(
-  <span class="c-str">"YOUR_API_URL/data/courses/102.json"</span>
+  <span class="c-str">"https://luigibarte4563.github.io/udd-courses-api/data/courses/1.json"</span>
 );
 
 <span class="c-kw">const</span> course <span class="c-punc">=</span> <span class="c-kw">await</span> response.json();
 
 console<span class="c-punc">.</span>log(course<span class="c-punc">.</span>name);</code></pre>
             </div>
-            <p class="example-card__note">Access a program directly with its ID. The same pattern works for schools: <span class="c-endpoint">data/schools/1.json</span>.</p>
+            <p class="example-card__note">Access a program directly with its ID. The same pattern works for schools: <span class="c-endpoint">https://luigibarte4563.github.io/udd-courses-api/data/schools/1.json</span>.</p>
           </article>
         </div>
       </div>
@@ -628,7 +628,7 @@ console<span class="c-punc">.</span>log(course<span class="c-punc">.</span>name)
           </div>
           <h3 class="source__title">Open and learn.</h3>
           <p class="source__text">Explore the project, understand how the data is structured, and use the API in your own learning projects.</p>
-          <a class="btn btn--ghost" href="https://github.com/Luigibarte4563/Flutter.git" target="_blank" rel="noopener">
+          <a class="btn btn--ghost" href="https://github.com/Luigibarte4563/udd-courses-api" target="_blank" rel="noopener">
             View on GitHub
           </a>
         </div>

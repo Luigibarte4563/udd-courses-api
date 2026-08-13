@@ -4,12 +4,12 @@
   "code": "SIHM",
   "courses": [
     {
-      "id": 501,
+      "id": 19,
       "name": "BS Tourism Management",
       "degree": "BS Tourism Management"
     },
     {
-      "id": 502,
+      "id": 20,
       "name": "BS Hospitality Management",
       "degree": "BS Hospitality Management"
     }

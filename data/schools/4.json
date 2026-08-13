@@ -4,18 +4,18 @@
   "code": "SBA",
   "courses": [
     {
-      "id": 401,
+      "id": 16,
       "name": "BS Accountancy",
       "degree": "BS Accountancy"
     },
     {
-      "id": 402,
+      "id": 17,
       "name": "BSBA - Financial Management",
       "degree": "BS Business Administration",
       "major": "Financial Management"
     },
     {
-      "id": 403,
+      "id": 18,
       "name": "BSBA - Marketing Management",
       "degree": "BS Business Administration",
       "major": "Marketing Management"

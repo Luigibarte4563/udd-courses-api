@@ -1,8 +1,8 @@
 {
-  "id": 305,
-  "name": "BSEd Major in Mathematics",
+  "id": 14,
+  "name": "BSEd Major in Science",
   "degree": "Bachelor of Secondary Education",
-  "major": "Mathematics",
+  "major": "Science",
   "school": {
     "id": 3,
     "name": "School of Teacher Education",

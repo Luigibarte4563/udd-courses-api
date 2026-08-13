@@ -4,25 +4,25 @@
   "code": "SITE",
   "courses": [
     {
-      "id": 101,
+      "id": 1,
       "name": "BS Computer Science - Data Science",
       "degree": "BS Computer Science",
       "specialization": "Data Science"
     },
     {
-      "id": 102,
+      "id": 2,
       "name": "BS Information Technology - Web Development",
       "degree": "BS Information Technology",
       "specialization": "Web Development"
     },
     {
-      "id": 103,
+      "id": 3,
       "name": "BS Information Technology - Multimedia Arts",
       "degree": "BS Information Technology",
       "specialization": "Multimedia Arts"
     },
     {
-      "id": 104,
+      "id": 4,
       "name": "BS Information Technology - Infrastructure with Cybersecurity",
       "degree": "BS Information Technology",
       "specialization": "Infrastructure with Cybersecurity"

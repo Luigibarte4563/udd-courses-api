@@ -1,1 +1,0 @@
-{"name":"udd-courses-api-site","private":true,"scripts":{"build:css":"tailwindcss -i css/input.css -o css/styles.css"},"devDependencies":{"tailwindcss":"^4.3.3","@tailwindcss/cli":"^4.3.3"}}
